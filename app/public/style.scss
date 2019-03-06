@@ -319,7 +319,7 @@ body {
                 animation-name: iconExit;
                 animation-timing-function: #{$bezier-reverse};
                 animation-duration:  $loader-exit-duration * .375;
-                animation-delay: $loader-exit-duration * .25;
+                animation-delay: $loader-exit-duration;
             }
 
             svg {

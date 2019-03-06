@@ -1,0 +1,21 @@
+//colors
+$color-bg: #1e3f9c;
+$color-base: #FFF;
+$color-accent: #00d0ef;
+$docready-class: '.loaded';
+
+
+
+$loader-enter-duration: 1s;
+$loader-exit-duration: 1.5s;
+
+
+//breakpoints
+$sm: 600px;
+$md: 1200px;
+$lg: 1800px;
+
+
+$bezier: cubic-bezier(.5, 0, 0.2, 1);
+$bezier-alt: cubic-bezier(1, -1.5, 0, 1);
+$bezier-reverse: cubic-bezier(1, -.5, 0, 1);

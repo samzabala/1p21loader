@@ -1,0 +1,341 @@
+@import "scss/_vars";
+@import "scss/_reset"; /* contains reset. scaffolding styles  in here are not neessary. */
+
+
+/* SVG STYLES */
+
+
+
+body {
+    // background: $color-bg;
+    color: #333;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes iconEnter {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+@keyframes iconExit {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: -200%;
+    }
+}
+
+
+@keyframes wheelsMove {
+    0% {
+        transform: translateY(0px);
+    }
+    79% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    81% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+//keyframes that will change duration / be replace or take place on ready
+
+@keyframes bodyMove {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(2px, 2px);
+    }
+    40% {
+        transform: translate(0px, 2px);
+    }
+    60% {
+        transform: translate(-1px, 0px);
+    }
+    80% {
+        transform: translate(0px, 1px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+@keyframes glowAnimate {
+    0% {
+        stroke-dasharray:0,50,0,100;
+        stroke-dashoffset: 150;
+        stroke-width:0;
+    }
+    25% {
+        stroke-dasharray:50,50,5,100;
+        stroke-dashoffset: 150;
+        stroke-width:8;
+    }
+    50% {
+        stroke-dasharray:0,50,0,100;
+        stroke-dashoffset: -150;
+        stroke-width:0;
+    }
+    75% {
+        stroke-dasharray:0,50,0,100;
+        stroke-dashoffset: -300;
+        stroke-width:0;
+    }
+    100% {
+        stroke-dasharray:0,50,0,100;
+        stroke-dashoffset: -300;
+        stroke-width:0;
+    }
+}
+
+@keyframes glowAnimateReady {
+    0% {
+        // stroke-dasharray:12,10,5,12;
+        stroke-dashoffset: -150;
+        // stroke-width:8;
+    }
+    50% {
+        // stroke-dasharray:12,10,5,12;
+        stroke-dashoffset: 150;
+        // stroke-width:8;
+    }
+    100% {
+        // stroke-dasharray:12,10,5,12;
+        stroke-dashoffset: -300;
+        // stroke-width:8;
+    }
+}
+
+
+//global svg styles
+
+    .stroke-filled{
+        fill: $color-bg;
+    }
+
+    * {
+        fill:none;
+        stroke:$color-base;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        stroke-miterlimit:10;
+
+        &,&:before,&:after {
+            animation-timing-function: linear;
+            transition-duration: .125s;
+            transition-timing-function: linear;
+            transition-property: all;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    .accent {
+
+        stroke:$color-accent;
+    }
+
+    .stroke-bolder{
+        stroke-width:8;
+    }
+    .stroke-bold{
+        stroke-width:7;
+    }
+    .stroke-normal{
+        stroke-width:5;
+    }
+    .stroke-light{
+        stroke-width:4;
+    }
+    .stroke-lighter{
+        stroke-width:3;
+    }
+
+    .stroke-dashed-glow {
+        stroke-dasharray:50,10,5,100;
+    }
+
+    //keyframe classes
+
+    // .keyframed {
+    //     -webkit-animation-fill-mode: both;
+    //     animation-fill-mode: both;
+    // }
+
+    .bodyMove {
+        animation-name: bodyMove;
+        animation-duration: .125s;
+
+        #{$docready-class} & {
+            -webkit-animation-duration: .025s;
+            animation-duration: .025s;
+
+        }
+    }
+
+    .wheelsMove {
+        animation-name: wheelsMove;
+        -webkit-animation-duration: .5s;
+    }
+
+
+    .glowAnimate {
+        animation-name: glowAnimate;
+        animation-iteration-count: infinite;
+        animation-duration:  1s;
+        animation-delay: $loader-enter-duration;
+        // animation-fill-mode: both;
+
+
+        stroke-dasharray:0,50,0,100;
+        stroke-dashoffset: 150;
+        stroke-width:0;
+
+        #{$docready-class} & {
+            animation-delay: 0s;
+            animation-duration:  2s;
+            animation-name: glowAnimateReady;
+            stroke-dasharray:12,10,5,12;
+            stroke-width:8;
+
+        }
+    }
+
+
+#loader {
+    position: fixed;
+    z-index:99999;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:0;
+    width: 100%;
+    height:100%;
+    background: $color-bg;
+    transition: .5s linear all;
+    animation-timing-function: #{$bezier};
+    
+
+    &:after {
+        content:"";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: $color-bg;
+        left:100%;
+        width: 50vh;
+        border-radius: 0 50vh 50vh 0;
+    }
+
+    #{$docready-class} & {
+        left: -150%;
+        opacity: 0;
+        transition-delay: $loader-exit-duration * .5;
+        transition-duration: $loader-exit-duration * .25;
+    }
+
+    
+    //styles
+
+        .icon {
+            transition: .125s linear all;
+            padding: 1em;
+            // font-size: 550px;
+            height: 600px;
+            width: 600px;
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            left:100%;
+            margin: auto;
+            overflow: hidden;
+
+            &:after {
+                content:"";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left:-50%;
+                right:-40%;
+                top:0;
+                bottom:0;
+                margin: auto;
+                background: rgba($color-accent,.2);
+                box-shadow: inset  0 0 0 0 rgba($color-bg,.2);
+                border-radius: 50%;
+                opacity: 0;
+                width: 200px;
+                height: 200px;
+
+
+
+               #{$docready-class} & {
+                    opacity: 1;
+                    width: 500px;
+                    animation-timing-function: $loader-exit-duration * .5;
+                    transition-duration: #{$bezier-reverse};
+                    box-shadow: inset  0 0 0 50px rgba($color-bg,.2);
+                    height: 500px;
+                }
+            }
+
+
+            //on Enter
+            animation-name: iconEnter;
+            animation-duration: $loader-enter-duration;
+            animation-fill-mode: both;
+            animation-timing-function: #{$bezier};
+            animation-iteration-count: 1;
+
+            // on exit 
+
+            #{$docready-class} & {
+                animation-name: iconExit;
+                animation-timing-function: #{$bezier-reverse};
+                animation-duration:  $loader-exit-duration * .375;
+                animation-delay: $loader-exit-duration * .25;
+            }
+
+            svg {
+                width:100%;
+                height:100%;
+            }
+        }
+
+        &-icon {
+            .wheel {
+                #{$docready-class} & {
+                    transition-duration: $loader-exit-duration * .0625;
+                    transition-delay: $loader-exit-duration * .0625;
+                    transform: skewX(2deg);
+                }
+            }
+        }
+}
+

@@ -26,6 +26,16 @@
 		"oAP": "/1p21-delorean.ai",
 		"oF": 0
 		},
+	"/1p21-delorean.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/1p21-delorean.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/974633A57BA8193.png": {
 		"ft": 32768,
 		"iS": 5695,
@@ -102,6 +112,13 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"/wp-content/mu-plugins/local-by-flywheel-demo-urls.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/wp-content/mu-plugins/local-by-flywheel-demo-urls.php",
+		"oF": 0
 		}
 	},
 "hooks": [

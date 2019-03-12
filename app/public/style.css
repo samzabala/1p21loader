@@ -357,9 +357,8 @@ body {
   width: 100%;
   height: 100%;
   background: #1e3f9c;
-  transition: .5s linear all;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
-  #loader, #loader *, #loader:before, #loader:after {
+  transition: 0.5s cubic-bezier(0.5, 0, 0.2, 1) left; }
+  #loader *, #loader:before, #loader:after {
     animation-timing-function: linear;
     transition-timing-function: linear;
     transition-property: all;

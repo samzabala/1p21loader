@@ -226,31 +226,31 @@ body {
 
 @keyframes wheelsMove {
   0% {
-    transform: translateY(0px); }
-  79% {
-    transform: translateY(0px); }
-  80% {
-    transform: translateY(2px); }
-  81% {
-    transform: translateY(-2px); }
+    transform: translateY(0px) rotate(0deg); }
+  25% {
+    transform: translateY(0px) rotate(0deg); }
+  50% {
+    transform: translateY(-2px) rotate(-0.05deg); }
+  75% {
+    transform: translateY(0px) rotate(0deg); }
   100% {
-    transform: translateY(0px); } }
+    transform: translateY(0px) rotate(0deg); } }
 
 @keyframes bodyMove {
   0% {
     transform: translate(0px, 0px); }
   20% {
-    transform: translate(2px, 2px); }
-  40% {
-    transform: translate(0px, 2px); }
-  60% {
-    transform: translate(-1px, 0px); }
-  80% {
     transform: translate(0px, 1px); }
+  40% {
+    transform: translate(0px, -2px); }
+  60% {
+    transform: translate(0px, 0px); }
+  80% {
+    transform: translate(0px, 0px); }
   100% {
     transform: translate(0px, 0px); } }
 
-@keyframes glowAnimate {
+@keyframes poleMove {}@keyframes glowAnimate {
   0% {
     stroke-dasharray: 0,50,0,100;
     stroke-dashoffset: 150;
@@ -274,11 +274,77 @@ body {
 
 @keyframes glowAnimateReady {
   0% {
-    stroke-dashoffset: -150; }
+    stroke-dashoffset: -150;
+    stroke-width: 1; }
   50% {
-    stroke-dashoffset: 150; }
+    stroke-dashoffset: 150;
+    stroke-width: 7; }
   100% {
-    stroke-dashoffset: -300; } }
+    stroke-dashoffset: 300;
+    stroke-width: 1; } }
+
+@keyframes glowAnimate {
+  0% {
+    stroke-dasharray: 0,50,0,100;
+    stroke-dashoffset: 150;
+    stroke-width: 0; }
+  25% {
+    stroke-dasharray: 50,50,5,100;
+    stroke-dashoffset: 150;
+    stroke-width: 8; }
+  50% {
+    stroke-dasharray: 0,50,0,100;
+    stroke-dashoffset: -150;
+    stroke-width: 0; }
+  75% {
+    stroke-dasharray: 0,50,0,100;
+    stroke-dashoffset: -300;
+    stroke-width: 0; }
+  100% {
+    stroke-dasharray: 0,50,0,100;
+    stroke-dashoffset: -300;
+    stroke-width: 0; } }
+
+@keyframes stripesAnimate {
+  0% {
+    stroke-dasharray: 250,0;
+    stroke-dashoffset: 300;
+    stroke-width: 1; }
+  50% {
+    stroke-dasharray: 0,250;
+    stroke-dashoffset: 0;
+    stroke-width: 3; }
+  100% {
+    stroke-dasharray: 250,0;
+    stroke-dashoffset: -300;
+    stroke-width: 1; } }
+
+.glowAnimate {
+  animation-name: glowAnimate;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  stroke-dasharray: 0,50,0,100;
+  stroke-dashoffset: 150;
+  stroke-width: 0; }
+  .glowAnimate:nth-child(even) {
+    animation-delay: 2.125s; }
+  .loaded .glowAnimate {
+    animation-delay: 0;
+    animation-duration: 0.5s;
+    animation-name: glowAnimateReady;
+    stroke-dasharray: 50,10,5,50; }
+
+.stripesAnimate {
+  animation-name: stripesAnimate;
+  animation-duration: 1s;
+  stroke-dasharray: 0,50;
+  stroke-dashoffset: 150;
+  stroke-width: 0; }
+  .stripesAnimate:nth-child(3n) {
+    animation-delay: 0.5s; }
+  .stripesAnimate:nth-child(3n + 1) {
+    animation-delay: 0.75s; }
 
 .stroke-filled {
   fill: #1e3f9c; }
@@ -299,9 +365,6 @@ body {
 .accent {
   stroke: #00d0ef; }
 
-.stroke-bolder {
-  stroke-width: 8; }
-
 .stroke-bold {
   stroke-width: 7; }
 
@@ -313,35 +376,6 @@ body {
 
 .stroke-lighter {
   stroke-width: 3; }
-
-.stroke-dashed-glow {
-  stroke-dasharray: 50,10,5,100; }
-
-.bodyMove {
-  animation-name: bodyMove;
-  animation-duration: .125s; }
-  .loaded .bodyMove {
-    -webkit-animation-duration: .025s;
-    animation-duration: .025s; }
-
-.wheelsMove {
-  animation-name: wheelsMove;
-  -webkit-animation-duration: .5s; }
-
-.glowAnimate {
-  animation-name: glowAnimate;
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  stroke-dasharray: 0,50,0,100;
-  stroke-dashoffset: 150;
-  stroke-width: 0; }
-  .loaded .glowAnimate {
-    animation-delay: 0s;
-    animation-duration: 2s;
-    animation-name: glowAnimateReady;
-    stroke-dasharray: 12,10,5,12;
-    stroke-width: 8; }
 
 #loader {
   position: fixed;
@@ -356,9 +390,10 @@ body {
   background: #1e3f9c;
   transition: .5s linear all;
   animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
-  #loader:after {
+  #loader:before, #loader:after {
     content: "";
-    position: absolute;
+    position: absolute; }
+  #loader:after {
     top: 0;
     bottom: 0;
     background: #1e3f9c;
@@ -367,9 +402,8 @@ body {
     border-radius: 0 50vh 50vh 0; }
   .loaded #loader {
     left: -150%;
-    opacity: 0;
-    transition-delay: 0.75s;
-    transition-duration: 0.375s; }
+    transition-delay: 2.5s;
+    transition-duration: 2.5s; }
   #loader .icon {
     transition: .125s linear all;
     padding: 1em;
@@ -385,7 +419,7 @@ body {
     margin: auto;
     overflow: hidden;
     animation-name: iconEnter;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
     animation-iteration-count: 1; }
@@ -408,19 +442,25 @@ body {
       .loaded #loader .icon:after {
         opacity: 1;
         width: 500px;
-        animation-timing-function: 0.75s;
-        transition-duration: cubic-bezier(1, -0.5, 0, 1);
+        animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
+        transition-duration: 1.875s;
         box-shadow: inset 0 0 0 50px rgba(30, 63, 156, 0.2);
         height: 500px; }
     .loaded #loader .icon {
       animation-name: iconExit;
       animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
-      animation-duration: 0.5625s;
-      animation-delay: 1.5s; }
+      animation-duration: 1.875s;
+      animation-delay: 5s; }
     #loader .icon svg {
       width: 100%;
       height: 100%; }
-  .loaded #loader-icon .wheel {
-    transition-duration: 0.09375s;
-    transition-delay: 0.09375s;
-    transform: skewX(2deg); }
+  #loader-icon .body {
+    animation-name: bodyMove;
+    animation-duration: 0.5s; }
+  #loader-icon .wheel {
+    animation-name: wheelsMove;
+    animation-duration: 0.125s; }
+    .loaded #loader-icon .wheel {
+      transition-duration: 2.5s;
+      transition-delay: 1.25s;
+      transform: skewX(4deg); }

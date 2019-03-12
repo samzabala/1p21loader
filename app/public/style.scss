@@ -11,123 +11,223 @@ body {
     color: #333;
 }
 
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
+// normal keyframes
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-@keyframes iconEnter {
-    0% {
-        left: 100%;
-    }
-    100% {
-        left: 0%;
-    }
-}
-@keyframes iconExit {
-    0% {
-        left: 0%;
-    }
-    100% {
-        left: -200%;
-    }
-}
 
 
-@keyframes wheelsMove {
-    0% {
-        transform: translateY(0px);
+    @keyframes iconEnter {
+        0% {
+            left: 100%;
+        }
+        100% {
+            left: 0%;
+        }
     }
-    79% {
-        transform: translateY(0px);
+    @keyframes iconExit {
+        0% {
+            left: 0%;
+        }
+        100% {
+            left: -200%;
+        }
     }
-    80% {
-        transform: translateY(2px);
-    }
-    81% {
-        transform: translateY(-2px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
 
 
-//keyframes that will change duration / be replace or take place on ready
-
-@keyframes bodyMove {
-    0% {
-        transform: translate(0px, 0px);
+    @keyframes wheelsMove {
+        0% {
+            transform: translateY(0px)  rotate(0deg);
+        }
+        25% {
+            transform: translateY(0px)  rotate(0deg);
+        }
+        50% {
+            transform: translateY(-2px)  rotate(-0.05deg);
+        }
+        75% {
+            transform: translateY(0px)  rotate(0deg);
+        }
+        100% {
+            transform: translateY(0px)  rotate(0deg);
+        }
     }
-    20% {
-        transform: translate(2px, 2px);
-    }
-    40% {
-        transform: translate(0px, 2px);
-    }
-    60% {
-        transform: translate(-1px, 0px);
-    }
-    80% {
-        transform: translate(0px, 1px);
-    }
-    100% {
-        transform: translate(0px, 0px);
-    }
-}
 
 
-@keyframes glowAnimate {
-    0% {
-        stroke-dasharray:0,50,0,100;
-        stroke-dashoffset: 150;
-        stroke-width:0;
+    @keyframes bodyMove {
+        0% {
+            transform: translate(0px, 0px);
+        }
+        20% {
+            transform: translate(0px, 1px);
+        }
+        40% {
+            transform: translate(0px, -2px);
+        }
+        60% {
+            transform: translate(0px, 0px);
+        }
+        80% {
+            transform: translate(0px, 0px);
+        }
+        100% {
+            transform: translate(0px, 0px);
+        }
     }
-    25% {
-        stroke-dasharray:50,50,5,100;
-        stroke-dashoffset: 150;
-        stroke-width:8;
-    }
-    50% {
-        stroke-dasharray:0,50,0,100;
-        stroke-dashoffset: -150;
-        stroke-width:0;
-    }
-    75% {
-        stroke-dasharray:0,50,0,100;
-        stroke-dashoffset: -300;
-        stroke-width:0;
-    }
-    100% {
-        stroke-dasharray:0,50,0,100;
-        stroke-dashoffset: -300;
-        stroke-width:0;
-    }
-}
+    
+    @keyframes poleMove {
 
-@keyframes glowAnimateReady {
-    0% {
-        // stroke-dasharray:12,10,5,12;
-        stroke-dashoffset: -150;
-        // stroke-width:8;
     }
-    50% {
-        // stroke-dasharray:12,10,5,12;
-        stroke-dashoffset: 150;
-        // stroke-width:8;
+
+//svg path keyframes
+// some vectors can be polylines, paths, circles and all kinds of checheboreche in the svg. to guarantee that the vector inherits the animation, add animation classes to those paths that it will affect
+    @keyframes glowAnimate {
+        0% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: 150;
+            stroke-width:0;
+        }
+        25% {
+            stroke-dasharray:50,50,5,100;
+            stroke-dashoffset: 150;
+            stroke-width:8;
+        }
+        50% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -150;
+            stroke-width:0;
+        }
+        75% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -300;
+            stroke-width:0;
+        }
+        100% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -300;
+            stroke-width:0;
+        }
     }
-    100% {
-        // stroke-dasharray:12,10,5,12;
-        stroke-dashoffset: -300;
-        // stroke-width:8;
+
+    @keyframes glowAnimateReady {
+        0% {
+            // stroke-dasharray:12,10,5,12;
+            stroke-dashoffset: -150;
+            stroke-width:1;
+        }
+        50% {
+            // stroke-dasharray:12,10,5,12;
+            stroke-dashoffset: 150;
+            stroke-width:7;
+        }
+        100% {
+            // stroke-dasharray:12,10,5,12;
+            stroke-dashoffset: 300;
+            stroke-width:1;
+        }
     }
-}
+
+    @keyframes glowAnimate {
+        0% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: 150;
+            stroke-width:0;
+        }
+        25% {
+            stroke-dasharray:50,50,5,100;
+            stroke-dashoffset: 150;
+            stroke-width:8;
+        }
+        50% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -150;
+            stroke-width:0;
+        }
+        75% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -300;
+            stroke-width:0;
+        }
+        100% {
+            stroke-dasharray:0,50,0,100;
+            stroke-dashoffset: -300;
+            stroke-width:0;
+        }
+    }
+
+
+
+    @keyframes stripesAnimate {
+        0% {
+            stroke-dasharray:250,0;
+            stroke-dashoffset: 300;
+            stroke-width:1;
+        }
+        50% {
+            stroke-dasharray:0,250;
+            stroke-dashoffset: 0;
+            stroke-width:3;
+        }
+        100% {
+            stroke-dasharray:250,0;
+            stroke-dashoffset: -300;
+            stroke-width:1;
+        }
+    }
+
+
+
+    //keyframe classes
+
+        .glowAnimate {
+            animation-name: glowAnimate;
+            animation-iteration-count: infinite;
+            animation-duration: $loader-loop-duration;
+            animation-delay: $loader-enter-duration;
+
+            //initial frame of animation
+            stroke-dasharray:0,50,0,100; 
+            stroke-dashoffset: 150;
+            stroke-width:0;
+
+            &:nth-child(even) {
+
+            animation-delay: $loader-enter-duration * 1.0625;
+            }
+
+            #{$docready-class} & {
+                animation-delay: 0;
+                animation-duration:   $loader-loop-duration * .5;
+                animation-name: glowAnimateReady;
+                stroke-dasharray:50,10,5,50;
+                // stroke-width:8;
+
+            }
+        }
+
+        .stripesAnimate {
+            
+            animation-name: stripesAnimate;
+            animation-duration: $loader-loop-duration;
+
+            //initial
+            stroke-dasharray:0,50;
+            stroke-dashoffset: 150;
+            stroke-width:0;
+
+            &:nth-child(3n) {
+                animation-delay: $loader-loop-duration * .5;
+            }
+
+            &:nth-child(3n + 1) {
+                animation-delay: $loader-loop-duration * .75;
+            }
+        }
 
 
 //global svg styles
@@ -153,13 +253,9 @@ body {
     }
 
     .accent {
-
         stroke:$color-accent;
     }
 
-    .stroke-bolder{
-        stroke-width:8;
-    }
     .stroke-bold{
         stroke-width:7;
     }
@@ -173,55 +269,9 @@ body {
         stroke-width:3;
     }
 
-    .stroke-dashed-glow {
-        stroke-dasharray:50,10,5,100;
-    }
-
-    //keyframe classes
-
-    // .keyframed {
-    //     -webkit-animation-fill-mode: both;
-    //     animation-fill-mode: both;
+    // .stroke-dashed-glow {
+    //     stroke-dasharray:50,10,5,100;
     // }
-
-    .bodyMove {
-        animation-name: bodyMove;
-        animation-duration: .125s;
-
-        #{$docready-class} & {
-            -webkit-animation-duration: .025s;
-            animation-duration: .025s;
-
-        }
-    }
-
-    .wheelsMove {
-        animation-name: wheelsMove;
-        -webkit-animation-duration: .5s;
-    }
-
-
-    .glowAnimate {
-        animation-name: glowAnimate;
-        animation-iteration-count: infinite;
-        animation-duration:  1s;
-        animation-delay: $loader-enter-duration;
-        // animation-fill-mode: both;
-
-
-        stroke-dasharray:0,50,0,100;
-        stroke-dashoffset: 150;
-        stroke-width:0;
-
-        #{$docready-class} & {
-            animation-delay: 0s;
-            animation-duration:  2s;
-            animation-name: glowAnimateReady;
-            stroke-dasharray:12,10,5,12;
-            stroke-width:8;
-
-        }
-    }
 
 
 #loader {
@@ -237,11 +287,28 @@ body {
     background: $color-bg;
     transition: .5s linear all;
     animation-timing-function: #{$bezier};
-    
 
-    &:after {
+    &:before,&:after {
+
         content:"";
         position: absolute;
+    }
+
+        
+    // &:before { //the blaze thing tha wheels doo
+    //     top: 0;
+    //     bottom: 0;
+    //     left: auto;
+    //     right: 0;
+    //     width: 50%;
+    //     background: red;
+    //     height: 2px;
+    //     margin: auto;
+    //     margin-top: 1vw
+    // }
+    
+
+    &:after { // circle edge end of animation
         top: 0;
         bottom: 0;
         background: $color-bg;
@@ -252,15 +319,15 @@ body {
 
     #{$docready-class} & {
         left: -150%;
-        opacity: 0;
+        // opacity: 0;
         transition-delay: $loader-exit-duration * .5;
-        transition-duration: $loader-exit-duration * .25;
+        transition-duration: $loader-exit-duration * .5;
     }
 
     
     //styles
 
-        .icon {
+        .icon { // car svg container
             transition: .125s linear all;
             padding: 1em;
             // font-size: 550px;
@@ -276,7 +343,7 @@ body {
             margin: auto;
             overflow: hidden;
 
-            &:after {
+            &:after { //circle glow 
                 content:"";
                 display: block;
                 position: absolute;
@@ -295,18 +362,18 @@ body {
 
 
 
-               #{$docready-class} & {
+               #{$docready-class} & { // come out before nyoom
                     opacity: 1;
                     width: 500px;
-                    animation-timing-function: $loader-exit-duration * .5;
-                    transition-duration: #{$bezier-reverse};
+                    animation-timing-function:  #{$bezier-reverse};
+                    transition-duration: $loader-exit-duration * .375;
                     box-shadow: inset  0 0 0 50px rgba($color-bg,.2);
                     height: 500px;
                 }
             }
 
 
-            //on Enter
+            //on Enter to the left, to the left
             animation-name: iconEnter;
             animation-duration: $loader-enter-duration;
             animation-fill-mode: both;
@@ -314,8 +381,7 @@ body {
             animation-iteration-count: 1;
 
             // on exit 
-
-            #{$docready-class} & {
+            #{$docready-class} & { //  boy bye
                 animation-name: iconExit;
                 animation-timing-function: #{$bezier-reverse};
                 animation-duration:  $loader-exit-duration * .375;
@@ -328,14 +394,34 @@ body {
             }
         }
 
-        &-icon {
-            .wheel {
-                #{$docready-class} & {
-                    transition-duration: $loader-exit-duration * .0625;
-                    transition-delay: $loader-exit-duration * .0625;
-                    transform: skewX(2deg);
+        
+        &-icon { //svg itself
+            .body {
+
+                animation-name: bodyMove;
+                animation-duration: $loader-loop-duration * .5;
+
+                // #{$docready-class} & {
+                //     animation-duration: $loader-loop-duration * .025;
+
+                // }
+            }
+
+
+            .wheel { // wheelio
+                animation-name: wheelsMove;
+                animation-duration: $loader-loop-duration * .125;
+
+                #{$docready-class} & { //wheels will skew like in the cartoons when it go nyoom
+                    transition-duration: $loader-exit-duration * .5;
+                    transition-delay: $loader-exit-duration * .25;
+                    transform: skewX(4deg);
                 }
             }
+
+            // .stripes {
+                
+            // }
         }
 }
 

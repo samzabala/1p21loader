@@ -13,74 +13,70 @@
 
                     <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0. DOM MODIFIED FOR BETTER MANIPULATION  -->
                     <svg version="1.1" id="loader-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="600px" height="220px" viewBox="0 0 600 220"
-                        style="enable-background:new 0 0 600 220;" xml:space="preserve">
+                        width="600px" height="240" viewBox="0 0 600 240"
+                        style="enable-background:new 0 0 600 240;" xml:space="preserve">
                         
                         <g class="car">
-                            <g class="body bodyMove">
-                                <polygon class="stroke-normal stroke-filled" points="330.4,101.5 372.9,77.2 380.1,97.6 379,115.6 375.9,119.1 377.6,131.5 382.8, 136.8 381,148.2 376.4,148.4 366.6,154 "/>
-                                <path class="stroke-normal stroke-filled" d="M124.6,168.3h9.9l-2.4,7.3h143.1l-5-9.5H282h51.4l32.3-9.2c2.9-8.7,5-30.5-1.1-47.5l-89.3-20.7h-69.8 L150.3,111l-81,10.8l-30.9,11.3l-3.2,9.7l-6,6.7l0.8,6.2h7.7l11.3,6.2h24.5L124.6,168.3z"/>
-                                    
-                                <polyline class="stroke-normal" points="150.3,111 162.8,165.5 229.1,165.5 264.6,124.2 264.6,88.7"/>
-                                <line class="stroke-bold" x1="317.5" y1="97.3" x2="321.4" y2="81.4"/>
-                                <polyline class="stroke-normal" points="275.4,88.7 275.4,116.8 346.6,116.8 343.1,104.4"/>
-                                <line class="stroke-lighter" x1="258.3" y1="85" x2="271" y2="85"/>
-                                <line class="stroke-lighter" x1="265.6" y1="78.9" x2="265.6" y2="85"/>
-                                <line class="stroke-lighter" x1="256.2" y1="78.2" x2="272.4" y2="79.6"/>
-                                <polygon class="stroke-normal" points="255.3,98.4 255.3,120.4 165.2,123 209.8,98.4"/>
-                                <line class="stroke-lighter" x1="35.2" y1="142.8" x2="83" y2="142.8"/>
-                                <line class="stroke-lighter" x1="115.5" y1="142.8" x2="157.6" y2="142.8"/>
-                                <line class="stroke-lighter" x1="248.5" y1="142.8" x2="291.5" y2="142.8"/>
-                                <line class="stroke-lighter" x1="157.1" y1="140.8" x2="250.3" y2="140.8"/>
-                                <line class="stroke-lighter" x1="324" y1="142.8" x2="368.3" y2="142.8"/>
+                            <g class="body">
+                                <polygon class="stroke-normal stroke-filled" points="330.4,99.2 372.9,74.9 380.1,95.3 379,113.3 375.9,116.8 377.6,129.2 382.8,134.5 381,145.9 376.4,146.1 366.6,151.7"/>
+                                <path class="stroke-normal stroke-filled" d="M124.6,166h9.9l-2.4, 7.3h143.1l-5-9.5H282h51.4l32.3-9.2c2.9-8.7,5-30.5-1.1-47.5l-89.3-20.7h-69.8 l-55.2,22.3l-81,10.8l-30.9,11.3l-3.2,9.7l-6,6.7l0.8,6.2h7.7l11.3,6.2h24.5L124.6,166z"/>
+                                <polyline class="stroke-normal" points="150.3,108.7 162.8,163.2 229.1,163.2 264.6,121.9 264.6,86.4"/>
+                                <line class="stroke-bold" x1="317.5" y1="95" x2="321.4" y2="79.1"/>
+                                <polyline class="stroke-normal"  points="275.4,86.4 275.4,114.5 346.6,114.5 343.1,102.1" />
+                                <line class="stroke-lighter" x1="258.3" y1="82.7" x2="271" y2="82.7"/>
+                                <line class="stroke-lighter" x1="265.6" y1="76.6" x2="265.6" y2="82.7"/>
+                                <line class="stroke-lighter" x1="256.2" y1="75.9" x2="272.4" y2="77.3"/>
+                                <polygon class="stroke-normal" points="255.3,96.1 255.3,118.1 165.2,120.7 209.8,96.1"/>
+                                <line class="stroke-lighter" x1="35.2" y1="140.5" x2="83" y2="140.5"/>
+                                <line class="stroke-lighter" x1="115.5" y1="140.5" x2="157.6" y2="140.5"/>
+                                <line class="stroke-lighter" x1="248.5" y1="140.5" x2="291.5" y2="140.5"/>
+                                <line class="stroke-lighter" x1="157.1" y1="138.5" x2="250.3" y2="138.5"/>
+                                <line class="stroke-lighter" x1="324" y1="140.5" x2="368.3" y2="140.5"/>
                                 
-                                <polyline class="stroke-normal" points="190.5,122.3 212.8,108.6 236.7,108.6 243.6,120.7"/>
-                                <polyline class="stroke-light" points="290.1,92.1 290.1,107.4 296.3,116.8"/>
-                                <polyline class="stroke-light" points="301.7,94.8 301.7,107.4 307.9,116.8"/>
-                                <polyline class="stroke-light" points="312.4,97.3 312.4,107.4 318.6,116.8"/>
+                                <polyline class="stroke-normal" points="190.5,120 212.8,106.3 236.7,106.3 243.6,118.4"/>
+                                <polyline class="stroke-light" points="290.1,89.8 290.1,105.1 296.3,114.5"/>
+                                <polyline class="stroke-light" points="301.7,92.5 301.7,105.1 307.9,114.5"/>
+                                <polyline class="stroke-light" points="312.4,95 312.4,105.1 318.6,114.5"/>
                                 
-                                <line class="stroke-lighter" x1="247.6" y1="128.8" x2="247.6" y2="128.8"/>
-                                <line class="stroke-normal" x1="226.8" y1="146.8" x2="235.1" y2="146.8"/>
-                                <line class="stroke-normal" x1="57.5" y1="149.9" x2="64.1" y2="149.9"/>
-                                <line class="stroke-normal" x1="51.1" y1="149.1" x2="51.1" y2="153"/>
+                                <line class="stroke-lighter" x1="247.6" y1="126.5" x2="247.6" y2="126.5"/>
+                                <line class="stroke-normal" x1="226.8" y1="144.5" x2="235.1" y2="144.5"/>
+                                <line class="stroke-normal" x1="57.5" y1="147.6" x2="64.1" y2="147.6"/>
+                                <line class="stroke-normal" x1="51.1" y1="146.8" x2="51.1" y2="150.7"/>
 
                                 <g class="pole">
-                                    <line class="stroke-normal" x1="280.9" y1="90" x2="338.3" y2="32.6"/>
-                                    <path class="stroke-lighter" d="M338.3,32.6l4.9-4.9c0.9-0.9,2.4-1,3.4-0.2l1.3,1c1.5,1.3,3.8,1.1,5.1-0.3l6.1-6.5c2.1-2.2,1.9-5.7-0.4-7.7l-1.7-1.4 c-2.5-2.1-6.2-2-8.5,0.2l-0.2,0.2"/>
+                                    <line class="stroke-normal" x1="280.9" y1="87.7" x2="338.3" y2="30.3"/>
+                                    <path class="stroke-lighter" d="M338.3,30.3l4.9-4.9c0.9-0.9,2.4-1,3.4-0.2l1.3,1c1.5,1.3,3.8,1.1,5.1-0.3l6.1-6.5c2.1-2.2,1.9-5.7-0.4-7.7 l-1.7-1.4c-2.5-2.1-6.2-2-8.5,0.2l-0.2,0.2"/>
                                 </g>
                             </g>
 
 
-                            <g class="wheels wheelsMove">
-
+                            <g class="wheels">
                                 <g class="wheel">
-
-                                    <circle class="stroke-normal stroke-filled" cx="99.3" cy="163" r="25.9"/>
-                                    <circle class="stroke-normal" cx="99.3" cy="162.8" r="16"/>
+                                    <circle class="stroke-normal stroke-filled" cx="99.3" cy="160.7" r="25.9"/>
+                                    <circle class="stroke-normal" cx="99.3" cy="160.5" r="16"/>
                                 </g>
                                 <g class="wheel">
-                                    <circle class="stroke-normal stroke-filled" cx="307.8" cy="163" r="25.9"/>
-                                    <circle class="stroke-normal" cx="307.8" cy="162.8" r="16"/>
+                                    <circle class="stroke-normal stroke-filled" cx="307.8" cy="160.7" r="25.9"/>
+                                    <circle class="stroke-normal" cx="307.8" cy="160.5" r="16"/>
                                 </g>
                             </g>
                         </g>
-                        <g class="wind">
-                            <line class="stroke-lighter" x1="378" y1="74.7" x2="461.4" y2="74.7"/>
-                            <line class="stroke-lighter" x1="404.3" y1="85" x2="570.8" y2="85"/>
-                            <line class="stroke-lighter" x1="386.6" y1="108.6" x2="503.9" y2="108.6"/>
-                            <line class="stroke-lighter" x1="412.6" y1="94.8" x2="509.5" y2="94.8"/>
-                            <line class="stroke-lighter" x1="393.7" y1="127.1" x2="523.6" y2="127.1"/>
-                            <line class="stroke-lighter"  x1="343.7" y1="170.9" x2="560.6" y2="170.9" />
-                            <line class="stroke-lighter" x1="416.2" y1="154" x2="506.3" y2="154"/>
-                            <line class="stroke-lighter" x1="332.9" y1="178.8" x2="423" y2="178.8"/>
-                            <line class="stroke-lighter" x1="398" y1="140.8" x2="445.3" y2="140.8"/>
+                        <g class="stripes">
+                            <line class="stripesAnimate stroke-lighter" x1="378" y1="72.4" x2="461.4" y2="72.4"/>
+                            <line class="stripesAnimate stroke-lighter" x1="404.3" y1="82.7" x2="570.8" y2="82.7"/>
+                            <line class="stripesAnimate stroke-lighter" x1="386.6" y1="106.3" x2="503.9" y2="106.3"/>
+                            <line class="stripesAnimate stroke-lighter" x1="412.6" y1="92.5" x2="509.5" y2="92.5"/>
+                            <line class="stripesAnimate stroke-lighter" x1="393.7" y1="124.8" x2="523.6" y2="124.8"/>
+                            <line class="stripesAnimate stroke-lighter"  x1="343.7" y1="168.6" x2="560.6" y2="168.6" />
+                            <line class="stripesAnimate stroke-lighter" x1="416.2" y1="151.7" x2="506.3" y2="151.7"/>
+                            <line class="stripesAnimate stroke-lighter" x1="332.9" y1="176.5" x2="423" y2="176.5"/>
+                            <line class="stripesAnimate stroke-lighter" x1="398" y1="138.5" x2="445.3" y2="138.5"/>
                         </g>
 
 
                         <g class="glow">
-                            <path class="glowAnimate stroke-bolder accent stroke-dashed-glow" d="M126,107.1c-6.5-12.7-7.8-23.9-2.6-31.5c12.8-19,60.9-9.1,107.3,22.2s73.6,72.1,60.8,91.1
-                                c-9.4,13.9-37.4,12.4-69.9-1.6"/>
-                            <path class="glowAnimate stroke-bolder accent stroke-dashed-glow" d="M123.4,188.8c12.8,19,60.9,9.1,107.3-22.2s73.6-72.1,60.8-91.1c-8.3-12.2-31-12.5-58.6-2.8"/>
+                            <path class="glowAnimate accent" d="M95.5,95.4C86.6,78,84.8,62.6,91.9,52.1c17.6-26.1,83.7-12.5,147.5,30.5s101.2,99.1,83.6,125.2 c-12.9,19.1-51.4,17-96.1-2.2"/>
+                            <path class="glowAnimate accent" d="M226.9,54.4c44.7-19.2,83.1-21.3, 96.1-2.2c17.6,26.1-19.8,82.2-83.6,125.2S109.5,234,91.9,207.9 c-1.7-2.5-2.9-5.3-3.6-8.4"/>
                         </g>
                     </svg>
 
@@ -117,11 +113,11 @@
 
         </main>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                setTimeout(function(){
-                    document.querySelector('body').classList.add('loaded');
-                },5000);
-            });
+            // document.addEventListener("DOMContentLoaded", function() {
+            //     setTimeout(function(){
+            //         document.querySelector('body').classList.add('loaded');
+            //     },5000);
+            // });
 
             //IE
             // document.attachEvent("onreadystatechange", function(){

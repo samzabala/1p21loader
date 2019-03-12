@@ -6,8 +6,12 @@ $docready-class: '.loaded';
 
 
 
-$loader-enter-duration: 1s;
-$loader-exit-duration: 1.5s;
+$loader-enter-duration: 2s; //how long it takes for entrance
+
+
+$loader-loop-duration: 1s; //how long it takes to loop animations while loading progress
+
+$loader-exit-duration: 5s; //how long it is to take to exit
 
 
 //breakpoints

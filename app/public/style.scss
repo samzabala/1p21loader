@@ -212,7 +212,7 @@ body {
             }
 
             #{$docready-class} & {
-                animation-delay: 0;
+                animation-delay: 0s;
                 animation-duration:   $loader-loop-duration * .5;
                 animation-name: glowAnimateReady;
                 stroke-dasharray:50,10,5,50;

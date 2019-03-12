@@ -330,7 +330,7 @@ body {
   .glowAnimate:nth-child(even) {
     animation-delay: 2.125s; }
   .loaded .glowAnimate {
-    animation-delay: 0;
+    animation-delay: 0s;
     animation-duration: 0.5s;
     animation-name: glowAnimateReady;
     stroke-dasharray: 50,10,5,50; }

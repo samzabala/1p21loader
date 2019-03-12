@@ -113,20 +113,11 @@
 
         </main>
         <script>
-            // document.addEventListener("DOMContentLoaded", function() {
-            //     setTimeout(function(){
-            //         document.querySelector('body').classList.add('loaded');
-            //     },5000);
-            // });
-
-            //IE
-            // document.attachEvent("onreadystatechange", function(){
-            //     if (document.readyState === "complete"){
-            //         setTimeout(function(){
-            //             document.querySelector('body').classList.add('loaded');
-            //         })
-            //     }
-            // });
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(function(){
+                    document.querySelector('body').classList.add('loaded');
+                },5000);
+            });
         </script>
     </body>
 </html>

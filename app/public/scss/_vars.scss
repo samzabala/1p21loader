@@ -11,7 +11,7 @@ $loader-enter-duration: 2s; //how long it takes for entrance
 
 $loader-loop-duration: 1s; //how long it takes to loop animations while loading progress
 
-$loader-exit-duration: 5s; //how long it is to take to exit
+$loader-exit-duration: 2s; //how long it is to take to exit
 
 
 //breakpoints
@@ -23,3 +23,4 @@ $lg: 1800px;
 $bezier: cubic-bezier(.5, 0, 0.2, 1);
 $bezier-alt: cubic-bezier(1, -1.5, 0, 1);
 $bezier-reverse: cubic-bezier(1, -.5, 0, 1);
+$bezier-skrt: cubic-bezier(1, 0, 0, 1.75);

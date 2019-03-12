@@ -226,29 +226,29 @@ body {
 
 @keyframes wheelsMove {
   0% {
-    transform: translateY(0px) rotate(0deg); }
+    transform: translateY(0px); }
   25% {
-    transform: translateY(0px) rotate(0deg); }
+    transform: translateY(0px); }
   50% {
-    transform: translateY(-2px) rotate(-0.05deg); }
+    transform: translateY(-2px); }
   75% {
-    transform: translateY(0px) rotate(0deg); }
+    transform: translateY(0px); }
   100% {
-    transform: translateY(0px) rotate(0deg); } }
+    transform: translateY(0px); } }
 
 @keyframes bodyMove {
   0% {
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px) rotate(0deg); }
   20% {
-    transform: translate(0px, 1px); }
+    transform: translate(0px, 1px) rotate(1deg); }
   40% {
-    transform: translate(0px, -2px); }
+    transform: translate(0px, -2px) rotate(0deg); }
   60% {
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px) rotate(-1deg); }
   80% {
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px) rotate(0deg); }
   100% {
-    transform: translate(0px, 0px); } }
+    transform: translate(0px, 0px) rotate(0deg); } }
 
 @keyframes poleMove {}@keyframes glowAnimate {
   0% {
@@ -346,37 +346,6 @@ body {
   .stripesAnimate:nth-child(3n + 1) {
     animation-delay: 0.75s; }
 
-.stroke-filled {
-  fill: #1e3f9c; }
-
-* {
-  fill: none;
-  stroke: #FFF;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10; }
-  *, *:before, *:after {
-    animation-timing-function: linear;
-    transition-duration: .125s;
-    transition-timing-function: linear;
-    transition-property: all;
-    animation-iteration-count: infinite; }
-
-.accent {
-  stroke: #00d0ef; }
-
-.stroke-bold {
-  stroke-width: 7; }
-
-.stroke-normal {
-  stroke-width: 5; }
-
-.stroke-light {
-  stroke-width: 4; }
-
-.stroke-lighter {
-  stroke-width: 3; }
-
 #loader {
   position: fixed;
   z-index: 99999;
@@ -390,6 +359,11 @@ body {
   background: #1e3f9c;
   transition: .5s linear all;
   animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
+  #loader, #loader *, #loader:before, #loader:after {
+    animation-timing-function: linear;
+    transition-timing-function: linear;
+    transition-property: all;
+    animation-iteration-count: infinite; }
   #loader:before, #loader:after {
     content: "";
     position: absolute; }
@@ -402,8 +376,8 @@ body {
     border-radius: 0 50vh 50vh 0; }
   .loaded #loader {
     left: -150%;
-    transition-delay: 2.5s;
-    transition-duration: 2.5s; }
+    transition-delay: 1.75s;
+    transition-duration: 0.25s; }
   #loader .icon {
     transition: .125s linear all;
     padding: 1em;
@@ -437,30 +411,49 @@ body {
       box-shadow: inset 0 0 0 0 rgba(30, 63, 156, 0.2);
       border-radius: 50%;
       opacity: 0;
-      width: 200px;
-      height: 200px; }
+      width: 500px;
+      height: 500px;
+      transform: scale(0.1); }
       .loaded #loader .icon:after {
         opacity: 1;
-        width: 500px;
-        animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
-        transition-duration: 1.875s;
+        animation-timing-function: cubic-bezier(1, 0, 0, 1.75);
+        transition-duration: 0.5s;
         box-shadow: inset 0 0 0 50px rgba(30, 63, 156, 0.2);
-        height: 500px; }
+        transform: scale(1); }
     .loaded #loader .icon {
       animation-name: iconExit;
       animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
-      animation-duration: 1.875s;
-      animation-delay: 5s; }
+      animation-duration: 1.75s;
+      animation-delay: 0.75s; }
     #loader .icon svg {
       width: 100%;
       height: 100%; }
+  #loader-icon * {
+    fill: none;
+    stroke: #FFF;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10; }
+  #loader-icon .stroke-filled {
+    fill: #1e3f9c; }
+  #loader-icon .accent {
+    stroke: #00d0ef; }
+  #loader-icon .stroke-bold {
+    stroke-width: 7; }
+  #loader-icon .stroke-normal {
+    stroke-width: 5; }
+  #loader-icon .stroke-light {
+    stroke-width: 4; }
+  #loader-icon .stroke-lighter {
+    stroke-width: 3; }
   #loader-icon .body {
+    transform-origin: center;
     animation-name: bodyMove;
     animation-duration: 0.5s; }
   #loader-icon .wheel {
     animation-name: wheelsMove;
     animation-duration: 0.125s; }
     .loaded #loader-icon .wheel {
-      transition-duration: 2.5s;
-      transition-delay: 1.25s;
+      transition-duration: 1s;
+      transition-delay: 0.5s;
       transform: skewX(4deg); }

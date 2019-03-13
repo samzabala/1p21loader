@@ -115,7 +115,8 @@
 
                 </div>
                 <div class="number">
-
+                    <span>0</span>
+                    <span>Loading</span>
                 </div>
             </div>
             

@@ -90,16 +90,21 @@
                             <path class="glow accent" d="M146.8,85.4c-4.8-17.4-5.8-32.8-2-43.3c9.5-26.1,45.3-12.5,79.9,30.5s54.8,99.1,45.3,125.2 c-7,19.1-27.8,17-52.1-2.2"/>
                             <path class="glow accent" d="M218,44.4c24.2-19.2,45-21.3,52.1-2.2c9.5,26.1-10.7,82.2-45.3,125.2s-70.4,56.6-79.9,30.5"/> -->
                             
-                            <path class="glow accent" d="M15.7,131.4L15.7,131.4L15.7,131.4c0,26.6,21.6,48.2,48.2,48.2h94.6"/>
-                            <path class="glow accent" d="M15.7,131.4L15.7,131.4L15.7,131.4c0-40,32.4-72.4,72.4-72.4h62.4"/>
-                            <path class="glow accent" d="M15.7,131.4L15.7,131.4L15.7,131.4c0,40,32.4,72.4,72.4,72.4h82.4"/>
-                            <path class="glow accent" d="M15.6,131.4L15.6,131.4L15.6,131.4c0,11.1,9,20.1,20.1,20.1h82.7"/>
-                            <path class="glow accent" d="M15.7,131.4L15.7,131.4L15.7,131.4c0-26.6,21.6-48.2,48.2-48.2h14.6"/>
-                            <path class="glow accent" d="M15.6,131.5L15.6,131.5L15.6,131.5c0-11.1,9-20.1,20.1-20.1h92.7"/>
-                            <line class="glow accent" x1="147.5" y1="166.4" x2="270" y2="166.4"/>
-                            <line class="glow accent" x1="148.9" y1="194.8" x2="305.8" y2="194.8"/>
-                            <line class="glow accent" x1="87.7" y1="67.4" x2="265.5" y2="67.4"/>
-                            <line class="glow accent" x1="157.3" y1="120" x2="352.9" y2="120"/>
+                           
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,40,32.4,72.4,72.4,72.4h82.4"/>
+
+
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,26.6,21.6,48.2,48.2,48.2h94.6"/>
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0-40,32.4-72.4,72.4-72.4h62.4"/>
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0-26.6,21.6-48.2,48.2-48.2h14.6"/>
+                            <path class="glow accent" d="M15.6,132.5L15.6,132.5L15.6,132.5c0-11.1,9-20.1,20.1-20.1h92.7"/>
+                            <path class="glow accent" d="M15.6,132.4L15.6,132.4L15.6,132.4c0,11.1,9,20.1,20.1,20.1h82.7"/>
+
+
+                            <line class="glow accent" x1="147.5" y1="167.4" x2="270" y2="167.4"/>
+                            <line class="glow accent" x1="148.9" y1="195.8" x2="305.8" y2="195.8"/>
+                            <line class="glow accent" x1="87.7" y1="68.4" x2="265.5" y2="68.4"/>
+                            <line class="glow accent" x1="157.3" y1="121" x2="352.9" y2="121"/>
                         </g>
                     </svg>
 
@@ -138,7 +143,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(function(){
-                    document.querySelector('body').classList.add('loaded');
+                    // document.querySelector('body').classList.add('loaded');
                 },5000);
             });
         </script>

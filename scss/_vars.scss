@@ -7,7 +7,7 @@ $docready-class: '.loaded'; //class that is added to body or html when loader ne
 
 
 $loader-enter-duration: .5s; //how long it takes for entrance
-$loader-loop-duration: 5s; //how long it takes to loop animations while loading progress
+$loader-loop-duration: 1s; //how long it takes to loop animations while loading progress
 $loader-exit-duration: 2s; //how long it is to take to exit
 
 

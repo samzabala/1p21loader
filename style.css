@@ -434,13 +434,13 @@ ul, ol {
     #loader-icon .glow:nth-child(4n + 3) {
       animation-delay: 1.625s; }
     .loaded #loader-icon .glow {
-      animation-delay: 0.5s;
+      animation-delay: 0s;
       animation-duration: 0.5s;
       animation-name: glowAnimateReady;
       stroke-dasharray: 0,100,0,150; }
       .loaded #loader-icon .glow:nth-child(4n + 1) {
-        animation-delay: 0.65625s; }
+        animation-delay: 0.15625s; }
       .loaded #loader-icon .glow:nth-child(4n + 2) {
-        animation-delay: 0.875s; }
+        animation-delay: 0.375s; }
       .loaded #loader-icon .glow:nth-child(4n + 3) {
-        animation-delay: 1.0625s; }
+        animation-delay: 0.5625s; }

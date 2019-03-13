@@ -1,8 +1,8 @@
 //colors
-$color-bg: #1e3f9c; //loader bg
-$color-base: #FFF;
-$color-accent: #00d0ef;
-$docready-class: '.loaded';
+$color-bg: #1e3f9c; //loader bg. some svg paths need to be filled to avoid overlapping strokes :')
+$color-base: #FFF; //stroke color
+$color-accent: #00d0ef; //stroke accent color
+$docready-class: '.loaded'; //class that is added to body or html when loader needs to die
 
 
 

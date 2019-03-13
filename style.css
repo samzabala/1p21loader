@@ -1,0 +1,446 @@
+/* Resets and Other Good Shit
+ --------------------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, picture, source, main,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+html {
+  overflow-x: hidden; }
+
+body {
+  line-height: 1;
+  overflow-x: hidden; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*:focus {
+  outline: none; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Firefox 25*/ }
+
+input,
+textarea,
+select,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  border: none;
+  resize: none;
+  display: block;
+  font-family: inherit;
+  color: inherit; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out; }
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent !important; }
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  color: transparent !important; }
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  color: transparent !important; }
+
+button {
+  border: none;
+  cursor: pointer; }
+
+a {
+  text-decoration: none; }
+
+.wow {
+  visibility: hidden; }
+
+.gform_hidden,
+.gform_validation_container {
+  display: none; }
+
+/* emulate background cover on image tags */
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; }
+
+/* Fonts
+ 
+ extra light 200
+ light 300
+ regular 400
+ medium 500
+ semi-bold 600
+ bold 700
+ extra-bold 800
+ black 900
+ 
+ @font-face {
+   font-family: '';
+   font-style: normal;
+   font-weight: 400;
+   src: url('fonts/.woff2') format('woff2');
+   font-display: fallback;
+ }
+ 
+ */
+/* placeholder basic content styles . DELETE when ready to put in site. if reset is already present, remove import declaration on the main style.scss*/
+main {
+  font-size: 17px;
+  line-height: 2.118; }
+
+h1 {
+  font-size: 52px;
+  line-height: 1; }
+
+@media (max-width: 410px) {
+  h1 {
+    font-size: 48px; } }
+
+@media (min-width: 751px) {
+  h1 {
+    font-size: 60px;
+    line-height: 1.084; } }
+
+@media (min-width: 1201px) {
+  h1 {
+    font-size: 92px;
+    line-height: 0.968; } }
+
+h2 {
+  font-size: 30px;
+  line-height: 1.434; }
+
+h3 {
+  font-size: 23px;
+  line-height: 1.783; }
+
+h4 {
+  font-size: 17px;
+  line-height: 2.412; }
+
+u {
+  margin-bottom: 35px; }
+
+ul, ol {
+  margin-bottom: 25px; }
+  ul li, ol li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 12px; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes iconEnter {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0%; } }
+
+@keyframes iconExit {
+  0% {
+    left: 0%; }
+  100% {
+    left: -200%; } }
+
+@keyframes wheelsMove {
+  0% {
+    transform: translateY(0px) rotate(0deg); }
+  20% {
+    transform: translateY(0px) rotate(0deg); }
+  40% {
+    transform: translateY(0px) rotate(1deg); }
+  60% {
+    transform: translateY(0px) rotate(-1deg); }
+  80% {
+    transform: translateY(0px) rotate(0deg); }
+  100% {
+    transform: translateY(0px) rotate(0deg); } }
+
+@keyframes bodyMove {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg); }
+  20% {
+    transform: translate(0px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(0px, 0px) rotate(1deg); }
+  60% {
+    transform: translate(0px, -1px) rotate(0deg); }
+  80% {
+    transform: translate(0px, 0px) rotate(-1deg); }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg); } }
+
+@keyframes poleMove {}@keyframes glowAnimate {
+  0% {
+    stroke-dasharray: 0,200,0,100;
+    stroke-dashoffset: 150;
+    stroke-width: 0; }
+  25% {
+    stroke-dasharray: 50,200,5,100;
+    stroke-dashoffset: 150;
+    stroke-width: 8; }
+  50% {
+    stroke-dasharray: 0,200,0,100;
+    stroke-dashoffset: -150;
+    stroke-width: 0; }
+  75% {
+    stroke-dasharray: 0,200,0,100;
+    stroke-dashoffset: -300;
+    stroke-width: 0; }
+  100% {
+    stroke-dasharray: 0,200,0,100;
+    stroke-dashoffset: -300;
+    stroke-width: 0; } }
+
+@keyframes glowAnimateReady {
+  0% {
+    stroke-dasharray: 50,100,5,150;
+    stroke-dashoffset: 300;
+    stroke-width: 1; }
+  50% {
+    stroke-dasharray: 50,100,5,150;
+    stroke-dashoffset: 150;
+    stroke-width: 7; }
+  100% {
+    stroke-dasharray: 50,100,5,150;
+    stroke-dashoffset: -300;
+    stroke-width: 1; } }
+
+@keyframes stripesAnimate {
+  0% {
+    stroke-dasharray: 250,0,10,50;
+    stroke-dashoffset: -300;
+    stroke-width: 1; }
+  50% {
+    stroke-dasharray: 0,250,10,50;
+    stroke-dashoffset: 0;
+    stroke-width: 3; }
+  100% {
+    stroke-dasharray: 250,0,10,50;
+    stroke-dashoffset: 300;
+    stroke-width: 1; } }
+
+#loader {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #1e3f9c;
+  transition: 0.5s cubic-bezier(0.5, 0, 0.2, 1) left; }
+  #loader *, #loader:before, #loader:after {
+    animation-timing-function: linear;
+    transition-timing-function: linear;
+    transition-property: all;
+    animation-iteration-count: infinite; }
+  #loader:before, #loader:after {
+    content: "";
+    position: absolute; }
+  #loader:after {
+    top: 0;
+    bottom: 0;
+    background: #1e3f9c;
+    left: 100%;
+    width: 50vh;
+    border-radius: 0 50vh 50vh 0; }
+  .loaded #loader {
+    left: -150%;
+    transition-delay: 1.75s;
+    transition-duration: 0.25s; }
+  #loader .icon {
+    transition: .125s linear all;
+    padding: 1em;
+    height: 600px;
+    width: 600px;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    margin: auto;
+    animation-name: iconEnter;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
+    animation-iteration-count: 1; }
+    #loader .icon:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      right: -40%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: rgba(0, 208, 239, 0.2);
+      box-shadow: inset 0 0 0 0 rgba(30, 63, 156, 0.2);
+      border-radius: 50%;
+      opacity: 0;
+      width: 500px;
+      height: 500px;
+      transform: scale(0.1); }
+      .loaded #loader .icon:after {
+        opacity: 1;
+        transition-timing-function: cubic-bezier(1, 0, 0, 1.75);
+        transition-duration: 0.5s;
+        box-shadow: inset 0 0 0 50px rgba(30, 63, 156, 0.2);
+        transform: scale(1); }
+    .loaded #loader .icon {
+      animation-name: iconExit;
+      animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
+      animation-duration: 1.75s;
+      animation-delay: 0.75s; }
+    #loader .icon svg {
+      width: 100%;
+      height: 100%; }
+  #loader-icon * {
+    fill: none;
+    stroke: #FFF;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10; }
+  #loader-icon .stroke-filled {
+    fill: #1e3f9c; }
+  #loader-icon .accent {
+    stroke: #00d0ef; }
+  #loader-icon .stroke-bold {
+    stroke-width: 7; }
+  #loader-icon .stroke-normal {
+    stroke-width: 5; }
+  #loader-icon .stroke-light {
+    stroke-width: 4; }
+  #loader-icon .stroke-lighter {
+    stroke-width: 3; }
+  #loader-icon .body, #loader-icon .wheels {
+    animation-duration: 0.625s; }
+    .loaded #loader-icon .body, .loaded #loader-icon .wheels {
+      animation-duration: 0.25s; }
+  #loader-icon .body {
+    animation-name: bodyMove;
+    transform-origin: 35% 65%; }
+  #loader-icon .wheels {
+    animation-name: wheelsMove;
+    transform-origin: 34% 50%; }
+    .loaded #loader-icon .wheels {
+      transition-duration: 0.25s;
+      transition-delay: 0.5s;
+      transform: skewX(4deg); }
+  #loader-icon .stripe {
+    animation-name: stripesAnimate;
+    animation-duration: 1s;
+    stroke-dasharray: 0,50;
+    stroke-dashoffset: -150;
+    stroke-width: 0; }
+    #loader-icon .stripe:nth-child(3n) {
+      animation-delay: 0.5s; }
+    #loader-icon .stripe:nth-child(3n + 1) {
+      animation-delay: 0.75s; }
+  #loader-icon .glow {
+    animation-name: glowAnimate;
+    animation-iteration-count: infinite;
+    animation-duration: 0.75s;
+    animation-delay: 0.5s;
+    stroke-dasharray: 0,200,0,100;
+    stroke-dashoffset: 150;
+    stroke-width: 0; }
+    #loader-icon .glow:nth-child(4n + 1) {
+      animation-delay: 0.8125s; }
+    #loader-icon .glow:nth-child(4n + 2) {
+      animation-delay: 1.25s; }
+    #loader-icon .glow:nth-child(4n + 3) {
+      animation-delay: 1.625s; }
+    .loaded #loader-icon .glow {
+      animation-delay: 0.5s;
+      animation-duration: 0.5s;
+      animation-name: glowAnimateReady;
+      stroke-dasharray: 0,100,0,150; }
+      .loaded #loader-icon .glow:nth-child(4n + 1) {
+        animation-delay: 0.65625s; }
+      .loaded #loader-icon .glow:nth-child(4n + 2) {
+        animation-delay: 0.875s; }
+      .loaded #loader-icon .glow:nth-child(4n + 3) {
+        animation-delay: 1.0625s; }

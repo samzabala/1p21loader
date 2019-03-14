@@ -178,7 +178,7 @@ ul li, ol li { list-style: none; position: relative; margin-bottom: 12px; }
 
 .loaded #loader-icon .wheel { transition-duration: 0.25s; transition-delay: 0.75s; transform: skewX(10deg); transform-origin: 50% 50%; }
 
-#loader-icon .stripe, #loader-icon .glow { animation-fill-mode: both; }
+#loader-icon .stripe, #loader-icon .glow { animation-fill-mode: both; stroke-width: 0; }
 
 #loader-icon .stripe { animation-name: stripesAnimate; animation-duration: 0.5s; }
 

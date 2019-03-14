@@ -89,18 +89,14 @@
                             <path class="glow accent" d="M136.7,103.3c-7.3-13.4-10.4-25.8-8.2-35c5.6-23,42.9-18.1,83.1,11s68.3,71.4,62.6,94.4 c-4.1,16.8-25,18.7-51.6,7.2"/>
                             <path class="glow accent" d="M146.8,85.4c-4.8-17.4-5.8-32.8-2-43.3c9.5-26.1,45.3-12.5,79.9,30.5s54.8,99.1,45.3,125.2 c-7,19.1-27.8,17-52.1-2.2"/>
                             <path class="glow accent" d="M218,44.4c24.2-19.2,45-21.3,52.1-2.2c9.5,26.1-10.7,82.2-45.3,125.2s-70.4,56.6-79.9,30.5"/> -->
-                            
-                           
-                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,40,32.4,72.4,72.4,72.4h82.4"/>
 
 
-                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,26.6,21.6,48.2,48.2,48.2h94.6"/>
                             <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0-40,32.4-72.4,72.4-72.4h62.4"/>
                             <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0-26.6,21.6-48.2,48.2-48.2h14.6"/>
                             <path class="glow accent" d="M15.6,132.5L15.6,132.5L15.6,132.5c0-11.1,9-20.1,20.1-20.1h92.7"/>
-                            <path class="glow accent" d="M15.6,132.4L15.6,132.4L15.6,132.4c0,11.1,9,20.1,20.1,20.1h82.7"/>
-
-
+                            <path class="glow accent" d="M15.6,132.4L15.6,132.4L15.6,132.4c0,11.1,9,20.1,20.1,20.1h22.7"/>
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,40,32.4,72.4,72.4,72.4h82.4"/>
+                            <path class="glow accent" d="M15.7,132.4L15.7,132.4L15.7,132.4c0,26.6,21.6,48.2,48.2,48.2h94.6"/>
                             <line class="glow accent" x1="147.5" y1="167.4" x2="270" y2="167.4"/>
                             <line class="glow accent" x1="148.9" y1="195.8" x2="305.8" y2="195.8"/>
                             <line class="glow accent" x1="87.7" y1="68.4" x2="265.5" y2="68.4"/>
@@ -144,8 +140,8 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(function(){
-                    // document.querySelector('body').classList.add('loaded');
-                },5000);
+                    document.querySelector('body').classList.add('loaded');
+                },2000);
             });
         </script>
     </body>

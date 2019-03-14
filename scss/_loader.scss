@@ -32,16 +32,19 @@
         0% {
             transform: translateY(0px) rotate(0deg);
         }
-        20% {
+        30% {
             transform: translateY(0px) rotate(0deg);
         }
-        40% {
-            transform: translateY(0px) rotate(1deg);
+        50% {
+            transform: translateY(-1px) rotate(.5deg); //front wheels
         }
         60% {
-            transform: translateY(0px) rotate(-1deg);
+            transform: translateY(0px) rotate(0deg);
         }
-        80% {
+        70% {
+            transform: translateY(-1px) rotate(-.5deg); //back wheels
+        }
+        90% {
             transform: translateY(0px) rotate(0deg);
         }
         100% {
@@ -55,16 +58,16 @@
             transform: translate(0px, 0px) rotate(0deg);
         }
 
-        20% {
+        30% {
             transform: translate(0px, 2px) rotate(0deg);
         }
-        40% {
+        50% {
             transform: translate(0px, 0px) rotate(1deg);
         }
-        60% {
+        70% {
             transform: translate(0px, -1px) rotate(0deg);
         }
-        80% {
+        90% {
             transform: translate(0px, 0px) rotate(-1deg);
         }
         100% {
@@ -110,7 +113,7 @@
         0% {
             stroke-dasharray:50,100,5,150;
             stroke-dashoffset: 300;
-            stroke-width:1;
+            stroke-width:0;
         }
         50% {
             stroke-dasharray:50,100,5,150;
@@ -120,7 +123,7 @@
         100% {
             stroke-dasharray:50,100,5,150;
             stroke-dashoffset: -300;
-            stroke-width:1;
+            stroke-width:0;
         }
     }
 
@@ -150,13 +153,13 @@
     z-index:99999;
     top:0;
     bottom:0;
-    left:0;
+    left:auto;
     right:0;
     margin:0;
     width: 100%;
     height:100%;
     background: $color-bg;
-    transition: .5s #{$bezier} left;
+    transition: .5s #{$bezier} right;
 
     & *,&:before,&:after {
         animation-timing-function: linear;
@@ -195,7 +198,7 @@
     }
 
     #{$docready-class} & {
-        left: -150%;
+        right: calc(150% + 50vh);
         // opacity: 0;
         transition-delay: $loader-exit-duration * .875;
         transition-duration: $loader-exit-duration * .125;
@@ -206,76 +209,103 @@
 
         .icon { // car svg container
             transition: .125s linear all;
-            padding: 1em;
-            // font-size: 550px;
-            height: 600px;
-            width: 600px;
-            max-width: 100%;
-            max-height: 100%;
+            font-size: $icon-size;
+            height: 1em;
+            width: 1em;
+            max-width: calc(100% - 40px);
+            max-height: calc(100% - 40px);
             position: absolute;
             top:0;
             bottom:0;
             right:0;
             left:100%;
             margin: auto;
-            // overflow: hidden;
 
-            &:after { //circle glow 
+            // alt-circle-clip
+            overflow: hidden;
+
+            &:before { //circle glow 
                 content:"";
                 display: block;
                 position: absolute;
-                top: 50%;
-                left:-50%;
-                right:-40%;
+                margin: auto;
+                background: rgba($color-accent,.5);
+                // box-shadow: inset  0 0 0 0 rgba($color-bg,.2);
+                border: 0 solid rgba($color-bg,.2);
+                border-radius: 50%;
+
+                //alt-circle-halo
+                // left:-50%;
+                // right:-40%;
+                // top:-25%;
+                // bottom:-25%;
+                // width: 125%;
+                // height: 125%;
+                // padding-bottom:125%;
+
+                // alt-circle-clip
                 top:0;
                 bottom:0;
-                margin: auto;
-                background: rgba($color-accent,.2);
-                box-shadow: inset  0 0 0 0 rgba($color-bg,.2);
-                border-radius: 50%;
+                left:0;
+                width: .05em;
+                height: 75%;
                 opacity: 0;
-                width: 500px;
-                height: 500px;
                 transform: scale(.1);
+                transform-origin: left center;
 
 
 
                #{$docready-class} & { // come out before nyoom
-                    opacity: 1;
                     
                     transition-timing-function:  #{$bezier-skrt};
                     transition-duration: $loader-exit-duration * .25;
-                    box-shadow: inset  0 0 0 50px rgba($color-bg,.2);
+                    // box-shadow: inset  0 0 0 .025em rgba($color-bg,.2);
+                    border-width: .025em .0125em;
+                    opacity: 1;
                     transform: scale(1);
                 }
             }
 
 
-            //on Enter to the left, to the left
+            //on Enter to the left, to the left alt-circle-clip
             animation-name: iconEnter;
             animation-duration: $loader-enter-duration;
             animation-fill-mode: both;
             animation-timing-function: #{$bezier};
             animation-iteration-count: 1;
 
-            // on exit 
-            #{$docready-class} & { //  boy bye
-                animation-name: iconExit;
-                animation-timing-function: #{$bezier-reverse};
-                animation-duration:  $loader-exit-duration * .875;
-                animation-delay: $loader-exit-duration * .375;
-            }
+            // on exit alt-circle-halo
+            // #{$docready-class} & { //  boy bye
+            //     animation-name: iconExit;
+            //     animation-timing-function: #{$bezier-reverse};
+            //     animation-duration:  $loader-exit-duration * .875;
+            //     animation-delay: $loader-exit-duration * .375;
+            //     animation-iteration-count: 1;
+            // }
 
             svg {
+                position:absolute;
+                top:0;
+                left:0;
                 width:100%;
                 height:100%;
             }
         }
 
+        .icon,&-icon {
+
+            #{$docready-class} & { //  boy bye
+                animation-name: iconExit;
+                animation-timing-function: #{$bezier-reverse};
+                animation-duration:  $loader-exit-duration * .875;
+                animation-delay: $loader-exit-duration * .375;
+                animation-iteration-count: 1;
+            }
+
+        }
+
         
         &-icon { //svg itself
-
-            //keyframe classes
 
 
             * {
@@ -334,15 +364,25 @@
             }
 
 
-            .wheels { // wheelio
-                animation-name: wheelsMove;
-                transform-origin: 34% 50%;
+            .wheel { // wheelio
+
+                &s {
+                    animation-name: wheelsMove;
+                    transform-origin: 34% 50%;
+                }
+
+
 
                 #{$docready-class} & { //wheels will skew like in the cartoons when it go nyoom
                     transition-duration: $loader-exit-duration * .125;
-                    transition-delay: $loader-exit-duration * .25;
-                    transform: skewX(4deg);
+                    transition-delay: $loader-exit-duration * .5;
+                    transform: skewX(5deg);
+                    transform-origin: 50% 50%;
                 }
+            }
+
+            .stripe,.glow {
+                animation-fill-mode: both;
             }
 
             .stripe {
@@ -352,10 +392,10 @@
                 animation-duration: $loader-loop-duration;
                 // animation-delay: 0s;
 
-                //initial
-                stroke-dasharray:0,50;
-                stroke-dashoffset: -150;
-                stroke-width:0;
+                // initial
+                // stroke-dasharray:0,50;
+                // stroke-dashoffset: -150;
+                // stroke-width:0;
 
                 &:nth-child(3n) {
                     animation-delay: $loader-loop-duration * .5;
@@ -374,9 +414,9 @@
                 animation-delay: $loader-enter-duration;
 
                 //initial frame of animation
-                stroke-dasharray:100,50,0,100; 
-                stroke-dashoffset: 150;
-                stroke-width:0;
+                // stroke-dasharray:0,50,0,100; 
+                // stroke-dashoffset: 150;
+                // stroke-width:0;
 
                 &:nth-child(4n + 1) {
                     animation-delay: $loader-enter-duration + ($loader-loop-duration * .3125);
@@ -394,8 +434,8 @@
                     animation-delay: 0s;
                     animation-duration:   $loader-loop-duration * .5;
                     animation-name: glowAnimateReady;
-                    stroke-dasharray:0,100,0,150;
-                    // stroke-width:8;
+                    // stroke-dasharray:50,100,5,150;
+                    // stroke-width:0;
 
 
 

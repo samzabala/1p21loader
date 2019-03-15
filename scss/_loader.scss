@@ -147,12 +147,13 @@
     margin:0;
     width: 100%;
     height:100%;
-    background: $color-bg;
-    transition: .5s #{$bezier} right;
+    background: $loader-color-bg;
+    color: $loader-color-base;
+    transition: .5s #{$loader-bezier} right;
 
     & *,&:before,&:after {
-        animation-timing-function: linear;
-        transition-timing-function: linear;
+        animation-timing-function: #{$loader-bezier};
+        transition-timing-function: #{$loader-bezier};
         transition-property: all;
         animation-iteration-count: infinite;
         // animation-fill-mode: both;
@@ -180,13 +181,13 @@
     &:after { // circle edge end of animation
         top: 0;
         bottom: 0;
-        background: $color-bg;
+        background: $loader-color-bg;
         left:100%;
         width: 50vh;
         border-radius: 0 50vh 50vh 0;
     }
 
-    #{$docready-class} & {
+    #{$loader-docready-class} & {
         right: calc(150% + 50vh);
         // opacity: 0;
         transition-delay: $loader-exit-duration * .875;
@@ -198,7 +199,7 @@
 
         .icon { // car svg container
             transition: .125s linear all;
-            font-size: $icon-size;
+            font-size: $loader-icon-size;
             height: 1em;
             width: 1em;
             max-width: calc(100% - 40px);
@@ -218,9 +219,9 @@
                 display: block;
                 position: absolute;
                 margin: auto;
-                background: rgba($color-accent,.85);
-                box-shadow: inset  0 0 0 0 rgba($color-accent,.2);
-                border: 0 solid rgba($color-bg,.5);
+                background: rgba($loader-color-accent,.85);
+                box-shadow: inset  0 0 0 0 rgba($loader-color-accent,.2);
+                border: 0 solid rgba($loader-color-bg,.5);
                 border-radius: 50%;
 
                 //alt-circle-halo
@@ -244,11 +245,11 @@
 
 
 
-               #{$docready-class} & { // come out before nyoom
+               #{$loader-docready-class} & { // come out before nyoom
                     
-                    transition-timing-function:  #{$bezier-skrt};
+                    transition-timing-function:  #{$loader-bezier-skrt};
                     transition-duration: $loader-exit-duration * .25;
-                    // box-shadow: inset  0 0 0 .025em rgba($color-bg,.2);
+                    // box-shadow: inset  0 0 0 .025em rgba($loader-color-bg,.2);
                     border-width: .025em .0125em;
                     opacity: 1;
                     transform: scale(1);
@@ -257,16 +258,16 @@
 
 
             //on Enter to the left, to the left alt-circle-clip
-            animation-name: iconEnter;
-            animation-duration: $loader-enter-duration;
-            animation-fill-mode: both;
-            animation-timing-function: #{$bezier};
-            animation-iteration-count: 1;
+                animation-name: iconEnter;
+                animation-duration: $loader-enter-duration;
+                animation-fill-mode: both;
+                animation-timing-function: #{$loader-bezier};
+                animation-iteration-count: 1;
 
             // on exit alt-circle-halo
-            // #{$docready-class} & { //  boy bye
+            // #{$loader-docready-class} & { //  boy bye
             //     animation-name: iconExit;
-            //     animation-timing-function: #{$bezier-reverse};
+            //     animation-timing-function: #{$loader-bezier-reverse};
             //     animation-duration:  $loader-exit-duration * .875;
             //     animation-delay: $loader-exit-duration * .375;
             //     animation-iteration-count: 1;
@@ -284,9 +285,9 @@
         .icon,
         &-icon {
 
-            #{$docready-class} & { //  boy bye
+            #{$loader-docready-class} & { //  boy bye
                 animation-name: iconExit;  //happens on both svg and svg wrapper to create dimension
-                animation-timing-function: #{$bezier-reverse};
+                animation-timing-function: #{$loader-bezier-reverse};
                 animation-duration:  $loader-exit-duration * .875;
                 animation-delay: $loader-exit-duration * .375;
                 animation-iteration-count: 1;
@@ -300,7 +301,7 @@
 
             * {
                 fill:none;
-                stroke:$color-base;
+                stroke:$loader-color-base;
                 stroke-linecap:round;
                 stroke-linejoin:round;
                 stroke-miterlimit:10;
@@ -308,11 +309,11 @@
 
             // svg styles
             .stroke-filled{
-                fill: $color-bg;
+                fill: $loader-color-bg;
             }
 
             .accent {
-                stroke:$color-accent;
+                stroke:$loader-color-accent;
             }
 
             .stroke-bold{
@@ -335,7 +336,7 @@
             .body,.wheels { //make loop same so that the suspension syncs with the lubak the wheel makes sagi on
                 animation-duration: $loader-loop-duration;
 
-                #{$docready-class} & {
+                #{$loader-docready-class} & {
                     animation-duration: $loader-loop-duration * .5;
                 }
             }
@@ -356,7 +357,7 @@
 
 
 
-                #{$docready-class} & { //wheels will skew like in the cartoons when it go nyoom
+                #{$loader-docready-class} & { //wheels will skew like in the cartoons when it go nyoom
                     transition-duration: $loader-exit-duration * .125;
                     transition-delay: $loader-exit-duration * .375;
                     transform: skewX(10deg);
@@ -414,7 +415,7 @@
                     animation-delay: $loader-enter-duration + ($loader-loop-duration *  1.125);
                 }
 
-                #{$docready-class} & {
+                #{$loader-docready-class} & {
                     animation-delay: 0s;
                     animation-duration:   $loader-loop-duration * .5;
                     animation-name: glowAnimateReady;

@@ -9,8 +9,6 @@
         <div id="loader">
             <div id="loader-wrapper">
             <div class="icon iconEnter">
-
-
                     <!-- SVG illustration + markup has been modified for better manipulation -->
                     <svg version="1.1" id="loader-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         width="600px" height="240" viewBox="0 0 600 240"
@@ -18,7 +16,7 @@
                         
                         <g class="car">
                             <g class="body">
-                                <!-- other dtails: behind body -->
+                                <!-- other details: behind body -->
                                 <polygon class="stroke-normal stroke-filled" points="357.4,99.2 399.9,74.9 407.1,95.3 406,113.3 402.9,116.8 404.6,129.2 409.8,134.5 408,145.9 403.4,146.1 393.6,151.7"/>
                                 <line class="stroke-bold" x1="344.5" y1="95" x2="348.4" y2="79.1"/>
                                 
@@ -115,12 +113,53 @@
         </div>
         <!-- Script. Note that the added ready class must match the $docready-class variavle in scss/_vars.scss | move script to appropriate template part -->
         <script>
+            (function(global){
+                var DeloreanLoader = window.DeloreanLoader || {};
 
-            document.addEventListener("DOMContentLoaded", function() {
-                setTimeout(function(){
-                    document.querySelector('body').classList.add('loaded');
-                },2000);
-            });
+                DeloreanLoader = function(selector,numberSpan){
+                
+                    numberSpan = numberSpan || '.number'; //where the progress is going to be outputted
+                    this.loader  = document.querySelector(selector);
+
+                    function randNum (min,max){
+                        return Math.round(Math.random()*(max-min))+min;
+                    }
+
+                    this.counter = 0;
+                    this.counterContainer = this.loader.querySelector(numberSpan);
+                    this.progress = function(addToCount,cycle,container){
+                        this.counter = this.counter + addToCount;
+                        cycle();
+                    };
+                    this.cycle = function(){
+                        var addToCount = randNum(1,30),
+                            toInterval = randNum(10,750);
+                        if(this.counter < 100 && (this.counter + addToCount) < 100){
+                            var dl = this;
+                            setTimeout(function(){
+                                dl.progress(addToCount,dl.cycle,dl.counterContainer);
+                            },toInterval);
+                        }else{
+                            this.counter = 100;
+                            document.addEventListener("DOMContentLoaded", function() {
+                                setTimeout(function(){
+                                    document.querySelector('body').classList.add('loaded');
+                                },500);
+                            });
+                        }
+                    }
+
+                    this.cycle();
+
+                    return this;
+
+                }
+
+                window.DeloreanLoader = DeloreanLoader;
+
+                
+            })(window);
+            var loader = new DeloreanLoader('#loader','.number');
         </script>
     <!-- END LOADER -->
         

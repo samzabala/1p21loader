@@ -115,7 +115,6 @@
         <script>
             (function(global){
                 var DeloreanLoader = window.DeloreanLoader || {};
-
                 DeloreanLoader = function(selector,numberSpan){
                     dl = this;
                     numberSpan = numberSpan || '.number'; //where the progress is going to be outputted
@@ -130,8 +129,7 @@
 
                     dl.progress = function(addToCount,fn,container){
                         dl.counter = (dl.counter + addToCount < 100 ) ? dl.counter + addToCount : 100;
-                        console.log(dl.counter);
-                        fn();
+                        fn && fn();
                     };
 
                     dl.cycle = function(){
@@ -144,19 +142,28 @@
                         }else{
                             addToCount = 100,
                             fnToRun = function(){
-                                document.addEventListener("DOMContentLoaded", function() {
-                                        console.log('Ready');
-                                    setTimeout(function(){
-                                        document.querySelector('body').classList.add('loaded');
-                                    },100);
-                                });
                             };
                         }
                         
                         setTimeout(function(){
                             dl.progress( addToCount, fnToRun, dl.counterContainer, );
                         },toInterval);
+                    };
+
+                    dl.killLoader = function(){
+                        setTimeout(function(){ 
+                            if(dl.counter == 100)  { 
+                                console.log('Ready');
+                                document.querySelector('body').classList.add('loaded');
+                            }else{
+                                dl.killLoader()
+                            };
+                        },100);
                     }
+
+                    document.addEventListener("DOMContentLoaded", function() {
+                        dl.killLoader();
+                    });
 
                     dl.cycle();
                     return dl;

@@ -117,41 +117,52 @@
                 var DeloreanLoader = window.DeloreanLoader || {};
 
                 DeloreanLoader = function(selector,numberSpan){
-                
+                    dl = this;
                     numberSpan = numberSpan || '.number'; //where the progress is going to be outputted
-                    this.loader  = document.querySelector(selector);
+                    dl.loader  = document.querySelector(selector);
 
                     function randNum (min,max){
                         return Math.round(Math.random()*(max-min))+min;
                     }
 
-                    this.counter = 0;
-                    this.counterContainer = this.loader.querySelector(numberSpan);
-                    this.progress = function(addToCount,cycle,container){
-                        this.counter = this.counter + addToCount;
-                        cycle();
+                    dl.counter = 0;
+                    dl.counterContainer = dl.loader.querySelector(numberSpan);
+
+                    dl.progress = function(addToCount,fn,container){
+                        dl.counter = (dl.counter + addToCount < 100 ) ? dl.counter + addToCount : 100;
+                        console.log(dl.counter);
+                        fn();
                     };
-                    this.cycle = function(){
+
+                    dl.cycle = function(){
                         var addToCount = randNum(1,30),
-                            toInterval = randNum(10,750);
-                        if(this.counter < 100 && (this.counter + addToCount) < 100){
-                            var dl = this;
-                            setTimeout(function(){
-                                dl.progress(addToCount,dl.cycle,dl.counterContainer);
-                            },toInterval);
+                            toInterval = randNum(10,750),
+                            fnToRun;
+                        if(dl.counter < 100 && (dl.counter + addToCount) < 100) {
+                            addToCount = addToCount,
+                            fnToRun = dl.cycle;
                         }else{
-                            this.counter = 100;
-                            document.addEventListener("DOMContentLoaded", function() {
-                                setTimeout(function(){
-                                    document.querySelector('body').classList.add('loaded');
-                                },500);
-                            });
+                            addToCount = 100,
+                            fnToRun = function(){
+                                document.addEventListener("DOMContentLoaded", function() {
+                                        console.log('Ready');
+                                    setTimeout(function(){
+                                        document.querySelector('body').classList.add('loaded');
+                                    },100);
+                                });
+                            };
                         }
+
+
+
+                        setTimeout(function(){
+                            dl.progress( addToCount, fnToRun, dl.counterContainer, );
+                        },toInterval);
                     }
 
-                    this.cycle();
+                    dl.cycle();
 
-                    return this;
+                    return dl;
 
                 }
 

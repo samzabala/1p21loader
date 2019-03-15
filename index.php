@@ -152,23 +152,16 @@
                                 });
                             };
                         }
-
-
-
+                        
                         setTimeout(function(){
                             dl.progress( addToCount, fnToRun, dl.counterContainer, );
                         },toInterval);
                     }
 
                     dl.cycle();
-
                     return dl;
-
                 }
-
                 window.DeloreanLoader = DeloreanLoader;
-
-                
             })(window);
             var loader = new DeloreanLoader('#loader','.number');
         </script>

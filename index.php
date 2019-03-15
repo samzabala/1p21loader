@@ -113,36 +113,34 @@
         </div>
         <!-- Script. Note that the added ready class must match the $docready-class variavle in scss/_vars.scss | move script to appropriate template part -->
         <script>
+            // Plugin 
             (function(global){
-                var DeloreanLoader = window.DeloreanLoader || {};
-                DeloreanLoader = function(selector,numberSpan){
-                    dl = this;
-                    numberSpan = numberSpan || '.number'; //where the progress is going to be outputted
+                var DeloreanLoader = function(selector,numberSpan){
+                    var dl = this; // avoid scoping issues
+                    numberSpan = numberSpan || '.number'; // defau
                     dl.loader  = document.querySelector(selector);
-
-                    function randNum (min,max){
-                        return Math.round(Math.random()*(max-min))+min;
-                    }
-
                     dl.counter = 0;
                     dl.counterContainer = dl.loader.querySelector(numberSpan);
 
+                    dl.randNum = function (min,max){
+                        return Math.round(Math.random()*(max-min))+min;
+                    }
+
                     dl.progress = function(addToCount,fn,container){
                         dl.counter = (dl.counter + addToCount < 100 ) ? dl.counter + addToCount : 100;
+                        dl.counterContainer.innerText = dl.counter;
                         fn && fn();
                     };
 
                     dl.cycle = function(){
-                        var addToCount = randNum(1,30),
-                            toInterval = randNum(10,750),
+                        var addToCount = dl.randNum(1,30),
+                            toInterval = dl.randNum(10,500),
                             fnToRun;
                         if(dl.counter < 100 && (dl.counter + addToCount) < 100) {
                             addToCount = addToCount,
                             fnToRun = dl.cycle;
                         }else{
-                            addToCount = 100,
-                            fnToRun = function(){
-                            };
+                            addToCount = 100;
                         }
                         
                         setTimeout(function(){
@@ -170,7 +168,10 @@
                 }
                 window.DeloreanLoader = DeloreanLoader;
             })(window);
-            var loader = new DeloreanLoader('#loader','.number');
+
+
+            // init
+            DeloreanLoader('#loader','.number span');
         </script>
     <!-- END LOADER -->
         

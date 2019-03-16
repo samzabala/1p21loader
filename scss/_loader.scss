@@ -202,8 +202,8 @@
             font-size: $loader-icon-size;
             height: 1em;
             width: 1em;
-            max-width: calc(100% - 40px);
-            max-height: calc(100% - 40px);
+            max-width: calc(100% - 30px);
+            max-height: calc(100% - 30px);
             position: absolute;
             top:0;
             bottom:0;
@@ -437,6 +437,46 @@
                     }
 
                 }
+            }
+        }
+        //number loading
+
+        .number {
+            font-size: 48px;
+            font-weight: 700;
+            position:absolute;;
+            line-height:1;
+            width:3em;
+            // opacity: .1;
+            text-align: right;
+            display: inline-block;
+            height: 1em;
+            padding-right: 1.25em;
+            // top:70vh;
+            bottom:10vh;
+            right:0;
+            left:0;
+            margin: auto;
+
+            &:before,
+            &:after
+            {
+                position: absolute;
+                left: 60%;
+                // margin-left: .125em;
+            }
+
+            &:before {
+                content: "%";
+                top:0;
+                font-size: .625em;
+            }
+
+            &:after {
+                content: "Loading";
+                bottom:.375em;
+                font-size: .25em;
+                font-weight:300;
             }
         }
 }

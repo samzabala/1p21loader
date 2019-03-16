@@ -1,448 +1,212 @@
-/* Resets and Other Good Shit
- --------------------------------------------------------------------------------------- */
-html, body, div, span, applet, object, iframe, picture, source, main,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+/* Resets and Other Good Shit --------------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,700");
+html, body, div, span, applet, object, iframe, picture, source, main, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, main {
-  display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main { display: block; }
 
-html {
-  overflow-x: hidden; }
+html { overflow-x: hidden; }
 
-body {
-  line-height: 1;
-  overflow-x: hidden; }
+body { line-height: 1; overflow-x: hidden; }
 
-ol,
-ul {
-  list-style: none; }
+ol, ul { list-style: none; }
 
-blockquote,
-q {
-  quotes: none; }
+blockquote, q { quotes: none; }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
 
-*:focus {
-  outline: none; }
+*:focus { outline: none; }
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: '';
-  clear: both;
-  height: 0; }
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
-* html .clearfix {
-  zoom: 1; }
+* html .clearfix { zoom: 1; }
 
 /* IE6 */
-*:first-child + html .clearfix {
-  zoom: 1; }
+*:first-child + html .clearfix { zoom: 1; }
 
 /* IE7 */
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Firefox 25*/ }
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* Firefox 25*/ }
 
-input,
-textarea,
-select,
-button {
-  -webkit-appearance: none;
-  appearance: none;
-  -webkit-border-radius: 0;
-  border: none;
-  resize: none;
-  display: block;
-  font-family: inherit;
-  color: inherit; }
+input, textarea, select, button { -webkit-appearance: none; appearance: none; -webkit-border-radius: 0; border: none; resize: none; display: block; font-family: inherit; color: inherit; }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  -webkit-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  -ms-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { -webkit-transition: all .25s ease-in-out; -moz-transition: all .25s ease-in-out; -ms-transition: all .25s ease-in-out; -o-transition: all .25s ease-in-out; transition: all .25s ease-in-out; }
 
-input:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-  color: transparent !important; }
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { color: transparent !important; }
 
-input:focus:-moz-placeholder,
-textarea:focus:-moz-placeholder {
-  color: transparent !important; }
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { color: transparent !important; }
 
-input:focus:-ms-input-placeholder,
-textarea:focus:-ms-input-placeholder {
-  color: transparent !important; }
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { color: transparent !important; }
 
-button {
-  border: none;
-  cursor: pointer; }
+button { border: none; cursor: pointer; }
 
-a {
-  text-decoration: none; }
+a { text-decoration: none; }
 
-.wow {
-  visibility: hidden; }
+.wow { visibility: hidden; }
 
-.gform_hidden,
-.gform_validation_container {
-  display: none; }
+.gform_hidden, .gform_validation_container { display: none; }
 
 /* emulate background cover on image tags */
-.cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block; }
+.cover { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Fonts
- 
- extra light 200
- light 300
- regular 400
- medium 500
- semi-bold 600
- bold 700
- extra-bold 800
- black 900
- 
- @font-face {
-   font-family: '';
-   font-style: normal;
-   font-weight: 400;
-   src: url('fonts/.woff2') format('woff2');
-   font-display: fallback;
- }
- 
- */
+/* Fonts extra light 200 light 300 regular 400 medium 500 semi-bold 600 bold 700 extra-bold 800 black 900 @font-face { font-family: ''; font-style: normal; font-weight: 400; src: url('fonts/.woff2') format('woff2'); font-display: fallback; } */
 /* placeholder basic content styles . DELETE when ready to put in site. if reset is already present, remove import declaration on the main style.scss*/
-body {
-  font-family: 'Roboto','Helvetica','Arial',sans-serif; }
+body { font-family: 'Poppins','Roboto','Helvetica','Arial',sans-serif; }
 
-main {
-  font-size: 17px;
-  line-height: 2.118; }
+main { font-size: 17px; line-height: 2.118; }
 
-h1 {
-  font-size: 52px;
-  line-height: 1; }
+h1 { font-size: 52px; line-height: 1; }
 
-@media (max-width: 410px) {
-  h1 {
-    font-size: 48px; } }
+@media (max-width: 410px) { h1 { font-size: 48px; } }
 
-@media (min-width: 751px) {
-  h1 {
-    font-size: 60px;
-    line-height: 1.084; } }
+@media (min-width: 751px) { h1 { font-size: 60px; line-height: 1.084; } }
 
-@media (min-width: 1201px) {
-  h1 {
-    font-size: 92px;
-    line-height: 0.968; } }
+@media (min-width: 1201px) { h1 { font-size: 92px; line-height: 0.968; } }
 
-h2 {
-  font-size: 30px;
-  line-height: 1.434; }
+h2 { font-size: 30px; line-height: 1.434; }
 
-h3 {
-  font-size: 23px;
-  line-height: 1.783; }
+h3 { font-size: 23px; line-height: 1.783; }
 
-h4 {
-  font-size: 17px;
-  line-height: 2.412; }
+h4 { font-size: 17px; line-height: 2.412; }
 
-u {
-  margin-bottom: 35px; }
+u { margin-bottom: 35px; }
 
-ul, ol {
-  margin-bottom: 25px; }
-  ul li, ol li {
-    list-style: none;
-    position: relative;
-    margin-bottom: 12px; }
+ul, ol { margin-bottom: 25px; }
 
-@keyframes iconEnter {
-  0% {
-    left: 100%; }
-  100% {
-    left: 0%; } }
+ul li, ol li { list-style: none; position: relative; margin-bottom: 12px; }
 
-@keyframes iconExit {
-  0% {
-    left: 0%; }
-  100% {
-    left: -200%; } }
+@keyframes iconEnter { 0% { left: 100%; }
+  100% { left: 0%; } }
 
-@keyframes wheelsMove {
-  0% {
-    transform: translateY(0px) rotate(0deg); }
-  30% {
-    transform: translateY(0px) rotate(0deg); }
-  50% {
-    transform: translateY(-2px) rotate(0.5deg); }
-  60% {
-    transform: translateY(0px) rotate(0deg); }
-  70% {
-    transform: translateY(-2px) rotate(-0.5deg); }
-  90% {
-    transform: translateY(0px) rotate(0deg); }
-  100% {
-    transform: translateY(0px) rotate(0deg); } }
+@keyframes iconExit { 0% { left: 0%; }
+  100% { left: -200%; } }
 
-@keyframes bodyMove {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg); }
-  30% {
-    transform: translate(0px, 2px) rotate(0deg); }
-  50% {
-    transform: translate(0px, 0px) rotate(1deg); }
-  70% {
-    transform: translate(0px, -1px) rotate(0deg); }
-  90% {
-    transform: translate(0px, 0px) rotate(-1deg); }
-  100% {
-    transform: translate(0px, 0px) rotate(0deg); } }
+@keyframes wheelsMove { 0% { transform: translateY(0px) rotate(0deg); }
+  30% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(0.5deg); }
+  60% { transform: translateY(0px) rotate(0deg); }
+  70% { transform: translateY(-2px) rotate(-0.5deg); }
+  90% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(0px) rotate(0deg); } }
 
-@keyframes poleMove {}@keyframes glowAnimate {
-  0% {
-    stroke-dasharray: 0,50,0,100;
+@keyframes bodyMove { 0% { transform: translate(0px, 0px) rotate(0deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  50% { transform: translate(0px, 0px) rotate(1deg); }
+  70% { transform: translate(0px, -1px) rotate(0deg); }
+  90% { transform: translate(0px, 0px) rotate(-1deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); } }
+
+@keyframes poleMove {}@keyframes glowAnimate { 0% { stroke-dasharray: 0,50,0,100;
     stroke-dashoffset: -30;
     stroke-width: 0; }
-  25% {
-    stroke-dasharray: 100,50,0,100;
+  25% { stroke-dasharray: 100,50,0,100;
     stroke-dashoffset: -180;
     stroke-width: 8; }
-  50% {
-    stroke-dasharray: 50,50,0,100;
+  50% { stroke-dasharray: 50,50,0,100;
     stroke-dashoffset: -330;
     stroke-width: 1; }
-  75% {
-    stroke-dasharray: 0,50,0,100;
+  75% { stroke-dasharray: 0,50,0,100;
     stroke-dashoffset: -330;
     stroke-width: 0; }
-  100% {
-    stroke-dasharray: 0,50,0,100;
+  100% { stroke-dasharray: 0,50,0,100;
     stroke-dashoffset: -330;
     stroke-width: 0; } }
 
-@keyframes glowAnimateReady {
-  0% {
-    stroke-dasharray: 50,100,5,150;
+@keyframes glowAnimateReady { 0% { stroke-dasharray: 50,100,5,150;
     stroke-dashoffset: 300;
     stroke-width: 0; }
-  50% {
-    stroke-dasharray: 100,100,5,150;
+  50% { stroke-dasharray: 100,100,5,150;
     stroke-dashoffset: 150;
     stroke-width: 9; }
-  100% {
-    stroke-dasharray: 50,100,5,150;
+  100% { stroke-dasharray: 50,100,5,150;
     stroke-dashoffset: -300;
     stroke-width: 0; } }
 
-@keyframes stripesAnimate {
-  0% {
-    stroke-dasharray: 250,0,10,50;
+@keyframes stripesAnimate { 0% { stroke-dasharray: 250,0,10,50;
     stroke-dashoffset: -300;
     stroke-width: 1; }
-  50% {
-    stroke-dasharray: 0,80,10,50;
+  50% { stroke-dasharray: 0,80,10,50;
     stroke-dashoffset: 0;
     stroke-width: 3; }
-  100% {
-    stroke-dasharray: 250,0,10,50;
+  100% { stroke-dasharray: 250,0,10,50;
     stroke-dashoffset: 300;
     stroke-width: 1; } }
 
-#loader {
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  bottom: 0;
-  left: auto;
-  right: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background: #1e3f9c;
-  color: #FFF;
-  transition: 0.5s cubic-bezier(0.5, 0, 0.2, 1) right; }
-  #loader *, #loader:before, #loader:after {
-    animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
-    transition-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
-    transition-property: all;
-    animation-iteration-count: infinite; }
-  #loader:before, #loader:after {
-    content: "";
-    position: absolute; }
-  #loader:after {
-    top: 0;
-    bottom: 0;
-    background: #1e3f9c;
-    left: 100%;
-    width: 50vh;
-    border-radius: 0 50vh 50vh 0; }
-  .loaded #loader {
-    right: calc(150% + 50vh);
-    transition-delay: 1.75s;
-    transition-duration: 0.25s; }
-  #loader .icon {
-    transition: .125s linear all;
-    font-size: 600px;
-    height: 1em;
-    width: 1em;
-    max-width: calc(100% - 40px);
-    max-height: calc(100% - 40px);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 100%;
-    margin: auto;
-    overflow: hidden;
-    animation-name: iconEnter;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
-    animation-iteration-count: 1; }
-    #loader .icon:before {
-      content: "";
-      display: block;
-      position: absolute;
-      margin: auto;
-      background: rgba(0, 208, 239, 0.85);
-      box-shadow: inset 0 0 0 0 rgba(0, 208, 239, 0.2);
-      border: 0 solid rgba(30, 63, 156, 0.5);
-      border-radius: 50%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: .05em;
-      height: 75%;
-      opacity: 0;
-      transform: scale(0.1);
-      transform-origin: left center; }
-      .loaded #loader .icon:before {
-        transition-timing-function: cubic-bezier(1, 0, 0, 1.75);
-        transition-duration: 0.5s;
-        border-width: .025em .0125em;
-        opacity: 1;
-        transform: scale(1); }
-    #loader .icon svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
-  .loaded #loader .icon, .loaded #loader-icon {
-    animation-name: iconExit;
-    animation-timing-function: cubic-bezier(1, -0.5, 0, 1);
-    animation-duration: 1.75s;
-    animation-delay: 0.75s;
-    animation-iteration-count: 1; }
-  #loader-icon * {
-    fill: none;
-    stroke: #FFF;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10; }
-  #loader-icon .stroke-filled {
-    fill: #1e3f9c; }
-  #loader-icon .accent {
-    stroke: #00d0ef; }
-  #loader-icon .stroke-bold {
-    stroke-width: 7; }
-  #loader-icon .stroke-normal {
-    stroke-width: 5; }
-  #loader-icon .stroke-light {
-    stroke-width: 4; }
-  #loader-icon .stroke-lighter {
-    stroke-width: 3; }
-  #loader-icon .body, #loader-icon .wheels {
-    animation-duration: 1s; }
-    .loaded #loader-icon .body, .loaded #loader-icon .wheels {
-      animation-duration: 0.5s; }
-  #loader-icon .body {
-    animation-name: bodyMove;
-    transform-origin: 35% 65%; }
-  #loader-icon .wheels {
-    animation-name: wheelsMove;
-    transform-origin: 34% 50%; }
-  .loaded #loader-icon .wheel {
-    transition-duration: 0.25s;
-    transition-delay: 0.75s;
-    transform: skewX(10deg);
-    transform-origin: 50% 50%; }
-  #loader-icon .stripe, #loader-icon .glow {
-    animation-fill-mode: both;
-    stroke-width: 0; }
-  #loader-icon .stripe {
-    animation-name: stripesAnimate;
-    animation-duration: 0.5s; }
-    #loader-icon .stripe:nth-child(3n) {
-      animation-delay: 0.5s; }
-    #loader-icon .stripe:nth-child(3n + 1) {
-      animation-delay: 0.75s; }
-  #loader-icon .glow {
-    animation-name: glowAnimate;
-    animation-iteration-count: infinite;
-    animation-duration: 0.5s;
-    animation-delay: 0.75s; }
-    #loader-icon .glow:nth-child(4n + 1) {
-      animation-delay: 1.0625s; }
-    #loader-icon .glow:nth-child(4n + 2) {
-      animation-delay: 1.5s; }
-    #loader-icon .glow:nth-child(4n + 3) {
-      animation-delay: 1.875s; }
-    .loaded #loader-icon .glow {
-      animation-delay: 0s;
-      animation-duration: 0.5s;
-      animation-name: glowAnimateReady; }
-      .loaded #loader-icon .glow:nth-child(4n + 1) {
-        animation-delay: 0.15625s; }
-      .loaded #loader-icon .glow:nth-child(4n + 2) {
-        animation-delay: 0.375s; }
-      .loaded #loader-icon .glow:nth-child(4n + 3) {
-        animation-delay: 0.5625s; }
+#loader { position: fixed; z-index: 99999; top: 0; bottom: 0; left: auto; right: 0; margin: 0; width: 100%; height: 100%; background: #1e3f9c; color: #FFF; transition: 0.5s cubic-bezier(0.5, 0, 0.2, 1) right; }
+
+#loader *, #loader:before, #loader:after { animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); transition-timing-function: cubic-bezier(0.5, 0, 0.2, 1); transition-property: all; animation-iteration-count: infinite; }
+
+#loader:before, #loader:after { content: ""; position: absolute; }
+
+#loader:after { top: 0; bottom: 0; background: #1e3f9c; left: 100%; width: 50vh; border-radius: 0 50vh 50vh 0; }
+
+.loaded #loader { right: calc(150% + 50vh); transition-delay: 1.75s; transition-duration: 0.25s; }
+
+#loader .icon { transition: .125s linear all; font-size: 500px; height: 1em; width: 1em; max-width: calc(100% - 30px); max-height: calc(100% - 30px); position: absolute; top: 0; bottom: 0; right: 0; left: 100%; margin: auto; overflow: hidden; animation-name: iconEnter; animation-duration: 0.75s; animation-fill-mode: both; animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); animation-iteration-count: 1; }
+
+#loader .icon:before { content: ""; display: block; position: absolute; margin: auto; background: rgba(0, 208, 239, 0.85); box-shadow: inset 0 0 0 0 rgba(0, 208, 239, 0.2); border: 0 solid rgba(30, 63, 156, 0.5); border-radius: 50%; top: 0; bottom: 0; left: 0; width: .05em; height: 75%; opacity: 0; transform: scale(0.1); transform-origin: left center; }
+
+.loaded #loader .icon:before { transition-timing-function: cubic-bezier(1, 0, 0, 1.75); transition-duration: 0.5s; border-width: .025em .0125em; opacity: 1; transform: scale(1); }
+
+#loader .icon svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.loaded #loader .icon, .loaded #loader-icon { animation-name: iconExit; animation-timing-function: cubic-bezier(1, -0.5, 0, 1); animation-duration: 1.75s; animation-delay: 0.75s; animation-iteration-count: 1; }
+
+#loader-icon * { fill: none; stroke: #FFF; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 10; }
+
+#loader-icon .stroke-filled { fill: #1e3f9c; }
+
+#loader-icon .accent { stroke: #00d0ef; }
+
+#loader-icon .stroke-bold { stroke-width: 7; }
+
+#loader-icon .stroke-normal { stroke-width: 5; }
+
+#loader-icon .stroke-light { stroke-width: 4; }
+
+#loader-icon .stroke-lighter { stroke-width: 3; }
+
+#loader-icon .body, #loader-icon .wheels { animation-duration: 1s; }
+
+.loaded #loader-icon .body, .loaded #loader-icon .wheels { animation-duration: 0.5s; }
+
+#loader-icon .body { animation-name: bodyMove; transform-origin: 35% 65%; }
+
+#loader-icon .wheels { animation-name: wheelsMove; transform-origin: 34% 50%; }
+
+.loaded #loader-icon .wheel { transition-duration: 0.25s; transition-delay: 0.75s; transform: skewX(10deg); transform-origin: 50% 50%; }
+
+#loader-icon .stripe, #loader-icon .glow { animation-fill-mode: both; stroke-width: 0; }
+
+#loader-icon .stripe { animation-name: stripesAnimate; animation-duration: 0.5s; }
+
+#loader-icon .stripe:nth-child(3n) { animation-delay: 0.5s; }
+
+#loader-icon .stripe:nth-child(3n + 1) { animation-delay: 0.75s; }
+
+#loader-icon .glow { animation-name: glowAnimate; animation-iteration-count: infinite; animation-duration: 0.5s; animation-delay: 0.75s; }
+
+#loader-icon .glow:nth-child(4n + 1) { animation-delay: 1.0625s; }
+
+#loader-icon .glow:nth-child(4n + 2) { animation-delay: 1.5s; }
+
+#loader-icon .glow:nth-child(4n + 3) { animation-delay: 1.875s; }
+
+.loaded #loader-icon .glow { animation-delay: 0s; animation-duration: 0.5s; animation-name: glowAnimateReady; }
+
+.loaded #loader-icon .glow:nth-child(4n + 1) { animation-delay: 0.15625s; }
+
+.loaded #loader-icon .glow:nth-child(4n + 2) { animation-delay: 0.375s; }
+
+.loaded #loader-icon .glow:nth-child(4n + 3) { animation-delay: 0.5625s; }
+
+#loader .number { font-size: 48px; font-weight: 700; position: absolute; line-height: 1; width: 3em; text-align: right; display: inline-block; height: 1em; padding-right: 1.25em; bottom: 10vh; right: 0; left: 0; margin: auto; }
+
+#loader .number:before, #loader .number:after { position: absolute; left: 60%; }
+
+#loader .number:before { content: "%"; top: 0; font-size: .625em; }
+
+#loader .number:after { content: "Loading"; bottom: .375em; font-size: .25em; font-weight: 300; }

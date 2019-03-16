@@ -105,8 +105,7 @@
 
                 </div>
                 <div class="number">
-                    <span>0</span>
-                    <span>Loading</span>
+                    0
                 </div>
             </div>
             
@@ -114,6 +113,8 @@
         <!-- Script. Note that the added ready class must match the $docready-class variavle in scss/_vars.scss | move script to appropriate template part -->
         <script>
             // Plugin 
+
+            // <![CDATA[
             (function(global){
                 var DeloreanLoader = function(selector,numberSpan){
                     var dl = this; // avoid scoping issues
@@ -171,7 +172,9 @@
 
 
             // init
-            DeloreanLoader('#loader','.number span');
+            DeloreanLoader('#loader','.number');
+
+            // ]]>
         </script>
     <!-- END LOADER -->
         

@@ -112,67 +112,66 @@
         </div>
         <!-- Script. Note that the added ready class must match the $docready-class variavle in scss/_vars.scss | move script to appropriate template part -->
         <script>
-            // Plugin 
 
             // <![CDATA[
-            (function(global){
-                var DeloreanLoader = function(selector,numberSpan){
-                    var _ = this; // avoid scoping issues
-                    numberSpan = numberSpan || '.number'; // defau
-                    _.loader  = document.querySelector(selector);
-                    _.counter = 0;
-                    _.counterContainer = _.loader.querySelector(numberSpan);
+            // Plugin 
+                (function(global){
+                    var DeloreanLoader = function(selector,numberSpan){
+                        var _ = this; // avoid scoping issues
+                        numberSpan = numberSpan || '.number'; // defau
+                        _.loader  = document.querySelector(selector);
+                        _.counter = 0;
+                        _.counterContainer = _.loader.querySelector(numberSpan);
 
-                    _.randNum = function (min,max){
-                        return Math.round(Math.random()*(max-min))+min;
-                    }
-
-                    _.progress = function(addToCount,fn,container){
-                        _.counter = (_.counter + addToCount < 100 ) ? _.counter + addToCount : 100;
-                        _.counterContainer.innerText = _.counter;
-                        fn && fn();
-                    };
-
-                    _.cycle = function(){
-                        var addToCount = _.randNum(1,30),
-                            toInterval = _.randNum(10,500),
-                            fnToRun;
-                        if(_.counter < 100 && (_.counter + addToCount) < 100) {
-                            addToCount = addToCount,
-                            fnToRun = _.cycle;
-                        }else{
-                            addToCount = 100;
+                        _.randNum = function (min,max){
+                            return Math.round(Math.random()*(max-min))+min;
                         }
-                        
-                        setTimeout(function(){
-                            _.progress( addToCount, fnToRun, _.counterContainer, );
-                        },toInterval);
-                    };
 
-                    _.killLoader = function(){
-                        setTimeout(function(){ 
-                            if(_.counter == 100)  { 
-                                console.log('Ready');
-                                document.querySelector('body').classList.add('loaded');
+                        _.progress = function(addToCount,fn,container){
+                            _.counter = (_.counter + addToCount < 100 ) ? _.counter + addToCount : 100;
+                            _.counterContainer.innerText = _.counter;
+                            fn && fn();
+                        };
+
+                        _.cycle = function(){
+                            var addToCount = _.randNum(1,30),
+                                toInterval = _.randNum(10,500),
+                                fnToRun;
+                            if(_.counter < 100 && (_.counter + addToCount) < 100) {
+                                addToCount = addToCount,
+                                fnToRun = _.cycle;
                             }else{
-                                _.killLoader()
-                            };
-                        },100);
+                                addToCount = 100;
+                            }
+                            
+                            setTimeout(function(){
+                                _.progress( addToCount, fnToRun, _.counterContainer, );
+                            },toInterval);
+                        };
+
+                        _.killLoader = function(){
+                            setTimeout(function(){ 
+                                if(_.counter == 100)  { 
+                                    console.log('Ready');
+                                    document.querySelector('body').classList.add('loaded');
+                                }else{
+                                    _.killLoader()
+                                };
+                            },100);
+                        }
+
+                        document.addEventListener("DOMContentLoaded", function() {
+                            _.killLoader();
+                        });
+
+                        _.cycle();
+                        return _;
                     }
-
-                    document.addEventListener("DOMContentLoaded", function() {
-                        _.killLoader();
-                    });
-
-                    _.cycle();
-                    return _;
-                }
-                window.DeloreanLoader = DeloreanLoader;
-            })(window);
-
+                    window.DeloreanLoader = DeloreanLoader;
+                })(window);
 
             // init
-            DeloreanLoader('#loader','.number');
+                DeloreanLoader('#loader','.number');
 
             // ]]>
         </script>

@@ -65,7 +65,24 @@
     }
     
     @keyframes poleMove {
-
+        0% {
+            transform: rotate(0deg);
+        }
+        30% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        70% {
+            transform: rotate(1deg);
+        }
+        90% {
+            transform: rotate(-1deg); //boop
+        }
+        100% {
+            transform: rotate(0deg);
+        }
     }
 
     @keyframes glowAnimate {
@@ -100,17 +117,17 @@
 
     @keyframes glowAnimateReady {
         0% {
-            stroke-dasharray:50,100,5,150;
+            stroke-dasharray:50,25,5,25;
             stroke-dashoffset: 300;
             stroke-width:0;
         }
         50% {
-            stroke-dasharray:100,100,5,150;
+            stroke-dasharray:100,100,5,50;
             stroke-dashoffset: 150;
             stroke-width:9;
         }
         100% {
-            stroke-dasharray:50,100,5,150;
+            stroke-dasharray:50,25,5,25;
             stroke-dashoffset: -300;
             stroke-width:0;
         }
@@ -120,17 +137,27 @@
 
     @keyframes stripesAnimate {
         0% {
-            stroke-dasharray:250,0,10,50;
+            stroke-dasharray:0,100,0,100;
             stroke-dashoffset: -300;
             stroke-width:1;
         }
+        25% {
+            stroke-dasharray:100,80,10,50;
+            stroke-dashoffset: -150;
+            stroke-width:1;
+        }
         50% {
-            stroke-dasharray:0,80,10,50;
+            stroke-dasharray:100,20,20,50;
             stroke-dashoffset: 0;
             stroke-width:3;
         }
+        75% {
+            stroke-dasharray:100,80,40,50;
+            stroke-dashoffset: 150;
+            stroke-width:1;
+        }
         100% {
-            stroke-dasharray:250,0,10,50;
+            stroke-dasharray:0,100,0,100;
             stroke-dashoffset: 300;
             stroke-width:1;
         }
@@ -154,7 +181,7 @@
     transition: .5s #{$loader-bezier} right;
 
     & *,&:before,&:after {
-        animation-timing-function: #{$loader-bezier};
+        animation-timing-function: linear;
         transition-timing-function: #{$loader-bezier};
         transition-property: all;
         animation-iteration-count: infinite;
@@ -335,111 +362,120 @@
             //     stroke-dasharray:50,10,5,100;
             // }
 
-            .body,.wheels { //make loop same so that the suspension syncs with the lubak the wheel makes sagi on
-                animation-duration: $loader-loop-duration;
+            //CAR
 
-                #{$loader-docready-class} & {
-                    animation-duration: $loader-loop-duration * .5;
+                .body,.wheels,.pole { //make loop same so that the suspension syncs with the lubak the wheel makes sagi on
+                    animation-duration: $loader-loop-duration;
+
+                    #{$loader-docready-class} & {
+                        animation-duration: $loader-loop-duration * .5;
+                    }
                 }
-            }
-
-            
-            .body {
-                animation-name: bodyMove;
-                transform-origin: 35% 65%;
-            }
-
-
-            .wheel { // wheelio
-
-                &s {
-                    animation-name: wheelsMove;
-                    transform-origin: 34% 50%;
-                }
-
-
-
-                #{$loader-docready-class} & { //wheels will skew like in the cartoons when it go nyoom
-                    transition-duration: $loader-exit-duration * .125;
-                    transition-delay: $loader-exit-duration * .375;
-                    transform: skewX(10deg);
-                    transform-origin: 50% 50%;
-                }
-            }
-
-            .stripe,.glow {
-                animation-fill-mode: both;
-                stroke-width:0;
-            }
-
-            .stripe {
 
                 
-                animation-name: stripesAnimate;
-                animation-duration: $loader-loop-duration * .5;
-                // animation-delay: 0s;
-
-                // initial
-                // stroke-dasharray:0,50;
-                // stroke-dashoffset: -150;
-                // stroke-width:0;
-
-                &:nth-child(3n) {
-                    animation-delay: $loader-loop-duration * .5;
+                .body {
+                    animation-name: bodyMove;
+                    transform-origin: 35% 65%;
                 }
 
-                &:nth-child(3n + 1) {
-                    animation-delay: $loader-loop-duration * .75;
-                }
-                
-            }
 
-            .glow {
-                animation-name: glowAnimate;
-                animation-iteration-count: infinite;
-                animation-duration: $loader-loop-duration * .5;
-                animation-delay: $loader-enter-duration;
+                .wheel { // wheelio
 
-                //initial frame of animation
-                // stroke-dasharray:0,50,0,100; 
-                // stroke-dashoffset: 150;
-                // stroke-width:0;
+                    &s {
+                        animation-name: wheelsMove;
+                        transform-origin: 34% 50%;
+                    }
 
-                &:nth-child(4n + 1) {
-                    animation-delay: $loader-enter-duration + ($loader-loop-duration * .3125);
-                }
-                
-                &:nth-child(4n + 2) {
-                    animation-delay: $loader-enter-duration + ($loader-loop-duration * .75);
-                }
-                
-                &:nth-child(4n + 3) {
-                    animation-delay: $loader-enter-duration + ($loader-loop-duration *  1.125);
+
+
+                    #{$loader-docready-class} & { //wheels will skew like in the cartoons when it go nyoom
+                        transition-duration: $loader-exit-duration * .125;
+                        transition-delay: $loader-exit-duration * .375;
+                        transform: skewX(10deg);
+                        transform-origin: 50% 50%;
+                    }
                 }
 
-                #{$loader-docready-class} & {
-                    animation-delay: 0s;
-                    animation-duration:   $loader-loop-duration * .5;
-                    animation-name: glowAnimateReady;
-                    // stroke-dasharray:50,100,5,150;
+                .pole {
+                    transform-origin: 51% 37%;
+                    animation-name: poleMove;
+                }
+
+            //FX
+
+                .stripe,.glow {
+                    // animation-fill-mode: both; //dont anymore it looks yucky
+                    stroke-width:0;
+                }
+
+                .stripe {
+
+                    // animation-fill-mode: both;
+                    animation-name: stripesAnimate;
+                    animation-duration: $loader-loop-duration * 1;
+                    // animation-delay: 0s;
+
+                    // initial
+                    stroke-dasharray:0,100,0,100;
+                    // stroke-dashoffset: -150;
                     // stroke-width:0;
 
+                    &:nth-child(3n) {
+                        animation-delay: $loader-loop-duration * .5;
+                    }
 
+                    &:nth-child(3n + 1) {
+                        animation-delay: $loader-loop-duration * .875;
+                    }
+                    
+                }
+
+                .glow {
+                    animation-name: glowAnimate;
+                    animation-iteration-count: infinite;
+                    animation-duration: $loader-loop-duration * .5;
+                    animation-delay: $loader-enter-duration;
+
+                    //initial frame of animation
+                    // stroke-dasharray:0,50,0,100; 
+                    // stroke-dashoffset: 150;
+                    // stroke-width:0;
 
                     &:nth-child(4n + 1) {
-                        animation-delay: ( $loader-loop-duration * .5 ) * .3125;
+                        animation-delay: $loader-enter-duration + ($loader-loop-duration * .3125);
                     }
                     
                     &:nth-child(4n + 2) {
-                        animation-delay: ( $loader-loop-duration * .5 ) * .75;
+                        animation-delay: $loader-enter-duration + ($loader-loop-duration * .75);
                     }
                     
                     &:nth-child(4n + 3) {
-                        animation-delay: ( $loader-loop-duration * .5 ) *  1.125;
+                        animation-delay: $loader-enter-duration + ($loader-loop-duration *  1.125);
                     }
 
+                    #{$loader-docready-class} & {
+                        animation-delay: 0s;
+                        animation-duration:   $loader-loop-duration * .5;
+                        animation-name: glowAnimateReady;
+                        // stroke-dasharray:50,100,5,150;
+                        // stroke-width:0;
+
+
+
+                        &:nth-child(4n + 1) {
+                            animation-delay: ( $loader-loop-duration * .5 ) * .3125;
+                        }
+                        
+                        &:nth-child(4n + 2) {
+                            animation-delay: ( $loader-loop-duration * .5 ) * .75;
+                        }
+                        
+                        &:nth-child(4n + 3) {
+                            animation-delay: ( $loader-loop-duration * .5 ) *  1.125;
+                        }
+
+                    }
                 }
-            }
         }
         //number loading
 

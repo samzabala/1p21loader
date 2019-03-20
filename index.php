@@ -70,10 +70,10 @@
                             </g>
                         </g>
                         <g class="stripes">
-                        <line class="stripe" x1="587.6" y1="168.6" x2="370.7" y2="168.6"/>
-                        <line class="stripe" x1="533.3" y1="151.7" x2="443.2" y2="151.7"/>
-                        <line class="stripe" x1="450" y1="176.5" x2="359.9" y2="176.5"/>
-                        <line class="stripe" x1="472.3" y1="138.5" x2="425" y2="138.5"/>
+                            <line class="stripe" x1="587.6" y1="168.6" x2="370.7" y2="168.6"/>
+                            <line class="stripe" x1="533.3" y1="151.7" x2="443.2" y2="151.7"/>
+                            <line class="stripe" x1="450" y1="176.5" x2="359.9" y2="176.5"/>
+                            <line class="stripe" x1="472.3" y1="138.5" x2="425" y2="138.5"/>
                         </g>
 
 
@@ -117,62 +117,62 @@
             // <![CDATA[
             (function(global){
                 var DeloreanLoader = function(selector,numberSpan){
-                    var dl = this; // avoid scoping issues
+                    var _ = this; // avoid scoping issues
                     numberSpan = numberSpan || '.number'; // defau
-                    dl.loader  = document.querySelector(selector);
-                    dl.counter = 0;
-                    dl.counterContainer = dl.loader.querySelector(numberSpan);
+                    _.loader  = document.querySelector(selector);
+                    _.counter = 0;
+                    _.counterContainer = _.loader.querySelector(numberSpan);
 
-                    dl.randNum = function (min,max){
+                    _.randNum = function (min,max){
                         return Math.round(Math.random()*(max-min))+min;
                     }
 
-                    dl.progress = function(addToCount,fn,container){
-                        dl.counter = (dl.counter + addToCount < 100 ) ? dl.counter + addToCount : 100;
-                        dl.counterContainer.innerText = dl.counter;
+                    _.progress = function(addToCount,fn,container){
+                        _.counter = (_.counter + addToCount < 100 ) ? _.counter + addToCount : 100;
+                        _.counterContainer.innerText = _.counter;
                         fn && fn();
                     };
 
-                    dl.cycle = function(){
-                        var addToCount = dl.randNum(1,30),
-                            toInterval = dl.randNum(10,500),
+                    _.cycle = function(){
+                        var addToCount = _.randNum(1,30),
+                            toInterval = _.randNum(10,500),
                             fnToRun;
-                        if(dl.counter < 100 && (dl.counter + addToCount) < 100) {
+                        if(_.counter < 100 && (_.counter + addToCount) < 100) {
                             addToCount = addToCount,
-                            fnToRun = dl.cycle;
+                            fnToRun = _.cycle;
                         }else{
                             addToCount = 100;
                         }
                         
                         setTimeout(function(){
-                            dl.progress( addToCount, fnToRun, dl.counterContainer, );
+                            _.progress( addToCount, fnToRun, _.counterContainer, );
                         },toInterval);
                     };
 
-                    dl.killLoader = function(){
+                    _.killLoader = function(){
                         setTimeout(function(){ 
-                            if(dl.counter == 100)  { 
+                            if(_.counter == 100)  { 
                                 console.log('Ready');
                                 document.querySelector('body').classList.add('loaded');
                             }else{
-                                dl.killLoader()
+                                _.killLoader()
                             };
                         },100);
                     }
 
                     document.addEventListener("DOMContentLoaded", function() {
-                        dl.killLoader();
+                        _.killLoader();
                     });
 
-                    dl.cycle();
-                    return dl;
+                    _.cycle();
+                    return _;
                 }
                 window.DeloreanLoader = DeloreanLoader;
             })(window);
 
 
             // init
-            DeloreanLoader('#loader','.number');
+            //var loader = new DeloreanLoader('#loader','.number');
 
             // ]]>
         </script>

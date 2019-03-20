@@ -8,8 +8,8 @@
         $loader-icon-size: 500px; //base size of the icon. 
 
         $loader-enter-duration: .75s; //how long it takes for entrance
-        $loader-loop-duration: 1s; //how long it takes to loop animations while loading progress
-        $loader-exit-duration: 2s; //how long it is to take to exit
+        $loader-loop-duration: 5s; //how long it takes to loop animations while loading progress
+        $loader-exit-duration: 10s; //how long it is to take to exit
 
 
     //breakpoints

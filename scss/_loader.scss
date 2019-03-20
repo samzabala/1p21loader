@@ -78,7 +78,7 @@
             transform: rotate(1deg);
         }
         90% {
-            transform: rotate(-1deg); //boop
+            transform: rotate(-2deg); //boop
         }
         100% {
             transform: rotate(0deg);
@@ -117,17 +117,17 @@
 
     @keyframes glowAnimateReady {
         0% {
-            stroke-dasharray:50,25,5,25;
+            stroke-dasharray:25,100,5,25;
             stroke-dashoffset: 300;
             stroke-width:0;
         }
         50% {
-            stroke-dasharray:100,100,5,50;
+            stroke-dasharray:75,150,5,50;
             stroke-dashoffset: 150;
             stroke-width:9;
         }
         100% {
-            stroke-dasharray:50,25,5,25;
+            stroke-dasharray:25,100,5,25;
             stroke-dashoffset: -300;
             stroke-width:0;
         }
@@ -226,6 +226,18 @@
     
     //styles
 
+        .icon,
+        &-icon {
+
+            #{$loader-docready-class} & { //  boy bye
+                animation-name: iconExit;  //happens on both svg and svg wrapper to create dimension
+                animation-timing-function: #{$loader-bezier-reverse};
+                animation-duration:  $loader-exit-duration * .875;
+                animation-delay: $loader-exit-duration * .375;
+                animation-iteration-count: 1;
+            }
+        }
+
         .icon { // car svg container
             transition: .125s linear all;
             font-size: $loader-icon-size;
@@ -239,9 +251,25 @@
             right:0;
             left:100%;
             margin: auto;
+            overflow: hidden; // alt-circle-clip
 
-            // alt-circle-clip
-            overflow: hidden;
+
+            //on Enter to the left, to the left alt-circle-clip
+                animation-name: iconEnter;
+                animation-duration: $loader-enter-duration;
+                animation-fill-mode: both;
+                animation-timing-function: #{$loader-bezier};
+                animation-iteration-count: 1;
+
+
+            // on exit alt-circle-halo
+            // #{$loader-docready-class} & { //  boy bye
+            //     animation-name: iconExit;
+            //     animation-timing-function: #{$loader-bezier-reverse};
+            //     animation-duration:  $loader-exit-duration * .875;
+            //     animation-delay: $loader-exit-duration * .375;
+            //     animation-iteration-count: 1;
+            // }
 
             &:before { //circle glow 
                 content:"";
@@ -285,23 +313,6 @@
                 }
             }
 
-
-            //on Enter to the left, to the left alt-circle-clip
-                animation-name: iconEnter;
-                animation-duration: $loader-enter-duration;
-                animation-fill-mode: both;
-                animation-timing-function: #{$loader-bezier};
-                animation-iteration-count: 1;
-
-            // on exit alt-circle-halo
-            // #{$loader-docready-class} & { //  boy bye
-            //     animation-name: iconExit;
-            //     animation-timing-function: #{$loader-bezier-reverse};
-            //     animation-duration:  $loader-exit-duration * .875;
-            //     animation-delay: $loader-exit-duration * .375;
-            //     animation-iteration-count: 1;
-            // }
-
             svg { // for animation readiness
                 position:absolute;
                 top:0;
@@ -309,19 +320,6 @@
                 width:100%;
                 height:100%;
             }
-        }
-
-        .icon,
-        &-icon {
-
-            #{$loader-docready-class} & { //  boy bye
-                animation-name: iconExit;  //happens on both svg and svg wrapper to create dimension
-                animation-timing-function: #{$loader-bezier-reverse};
-                animation-duration:  $loader-exit-duration * .875;
-                animation-delay: $loader-exit-duration * .375;
-                animation-iteration-count: 1;
-            }
-
         }
 
         
@@ -455,7 +453,7 @@
 
                     #{$loader-docready-class} & {
                         animation-delay: 0s;
-                        animation-duration:   $loader-loop-duration * .5;
+                        animation-duration:   $loader-loop-duration * .25;
                         animation-name: glowAnimateReady;
                         // stroke-dasharray:50,100,5,150;
                         // stroke-width:0;
@@ -477,8 +475,9 @@
                     }
                 }
         }
-        //number loading
 
+
+    //number loading
         .number {
             font-size: 48px;
             font-weight: 700;

@@ -172,7 +172,7 @@
 
 
             // init
-            //var loader = new DeloreanLoader('#loader','.number');
+            DeloreanLoader('#loader','.number');
 
             // ]]>
         </script>

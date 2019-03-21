@@ -16,6 +16,14 @@
             left: -200%;
         }
     }
+    @keyframes numberEnter {
+        0% {
+            transform:  translateY(8vw);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 
 
     @keyframes wheelsMove {
@@ -484,16 +492,21 @@
             position:absolute;;
             line-height:1;
             width:3em;
-            // opacity: .1;
             text-align: right;
             display: inline-block;
             height: 1em;
             padding-right: 1.25em;
-            // top:70vh;
             bottom:10vh;
             right:0;
             left:0;
             margin: auto;
+            animation-name: numberEnter;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-duration: $loader-enter-duration;
+            animation-timing-function: #{$loader-bezier-skrt};
+            // initial before animation
+            // transform: translateY(2em);
 
             &:before,
             &:after

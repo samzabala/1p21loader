@@ -12,11 +12,6 @@
         $loader-exit-duration: 2s; //how long it is to take to exit
 
 
-    //breakpoints
-        $loader-br-sm: 600px;
-        $loader-br-md: 1200px;
-        $loader-br-lg: 1800px;
-
     //timings
         $loader-bezier: cubic-bezier(.5, 0, 0.2, 1);
         $loader-bezier-alt: cubic-bezier(1, -1.5, 0, 1);

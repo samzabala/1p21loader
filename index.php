@@ -139,7 +139,7 @@
 
                             _.cycle = function(){
                                 var addToCount = _.randNum(1,30), //number to add to counter
-                                    toInterval = _.counter == 0 ? 1000 : _.randNum(10,500), //1000 is the time mark after the set $loader-enter-duration. change if u change that css var too so the timing is nice
+                                    toInterval = _.counter == 0 ? 750 : _.randNum(10,500), //750 is the time mark after the set $loader-enter-duration. change if u change that css var too so the timing is nice
                                     callback;
                                 if(_.counter < 100 && (_.counter + addToCount) < 100) {  // must never be more than one hundred because wew
                                     addToCount = addToCount,

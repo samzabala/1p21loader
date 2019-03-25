@@ -144,7 +144,7 @@
                                     addToCount = addToCount,
                                     callback = _.cycle;
                                 }else{
-                                    _.cycle(); //do it again and find a better number
+                                    _.counter = 100;
                                 }
                                 
                                 setTimeout(function(){

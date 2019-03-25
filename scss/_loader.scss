@@ -186,7 +186,7 @@
     min-height: 320px;
     background: $loader-color-bg;
     color: $loader-color-base;
-    transition: .5s #{$loader-bezier} right;
+    transition:  right .5s #{$loader-bezier},  border-radius .5s #{$loader-bezier};
 
     & *,&:before,&:after {
         animation-timing-function: linear;
@@ -215,20 +215,22 @@
     // }
     
 
-    &:after { // circle edge end of animation
-        top: 0;
-        bottom: 0;
-        background: $loader-color-bg;
-        left:100%;
-        width: 50vh;
-        border-radius: 0 50vh 50vh 0;
-    }
+    // &:after { // circle edge end of animation
+    //     top: 0;
+    //     bottom: 0;
+    //     background: $loader-color-bg;
+    //     left:100%;
+    //     width: 50vh;
+    //     border-radius: 0 50vh 50vh 0;
+    // }
 
     #{$loader-docready-class} & {
         right: calc(150% + 50vh);
         // opacity: 0;
-        transition-delay: $loader-exit-duration * .875;
-        transition-duration: $loader-exit-duration * .125;
+            transition:
+                right ($loader-exit-duration * .125) #{$loader-bezier} ($loader-exit-duration * .875),
+                border-radius ($loader-exit-duration * .0625) #{$loader-bezier} ($loader-exit-duration * .8125);
+            border-radius: 0 50vh 50vh 0;
     }
 
     
@@ -487,7 +489,7 @@
 
     //number loading
         .number {
-            font-size: 48px;
+            font-size: 60px;
             font-weight: 700;
             position:absolute;;
             line-height:1;

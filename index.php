@@ -157,7 +157,7 @@
                                 setTimeout(function(){ 
                                     if(_.counter == 100)  { 
                                         console.log('Ready');
-                                        document.querySelector('body').classList.add('loaded');
+                                        document.querySelector('html').classList.add('loaded');
                                     }else{
                                         _.killLoader()
                                     };

@@ -9,16 +9,6 @@
 	],
 "creatorBuild": "28905",
 "files": {
-	"/1p21-delorean-working.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/1p21-delorean-working.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"/1p21-delorean.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -29,33 +19,12 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/974633A57BA8193.png": {
-		"ft": 32768,
-		"iS": 5695,
-		"oA": 0,
-		"oAP": "/974633A57BA8193.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/index.php",
 		"oF": 0
-		},
-	"/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/main-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"/scss/_loader.scss": {
 		"aP": 0,

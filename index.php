@@ -100,11 +100,10 @@
                         </svg>
 
                     <!-- END SVG CODE -->
-
-
-
-
                     </div>
+
+
+                    
                     <div class="number">
                         0
                     </div>

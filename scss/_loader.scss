@@ -190,7 +190,6 @@
     min-height: 320px;
     background: $loader-color-bg;
     color: $loader-color-base;
-    transition:  right .5s #{$loader-bezier},  border-radius .5s #{$loader-bezier};
 
     & *,&:before,&:after {
         animation-timing-function: linear;
